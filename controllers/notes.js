@@ -32,6 +32,15 @@ router.post('/create/:flyId', (req, res) => {
     .then(fly => res.json(fly))
 })
 
+// destroy DELETE route
+router.delete('/:noteId', (req, res) => {
+    db.Fly.findOneAndUpdate(
+        { 'notes._id': req.params.noteId },
+        { $pull: { notes: {_id: req.params.noteId}}},
+        { new: true }
+    )
+        .then(res.send(`you deleted the  ${req.params.noteId}`))
+})
 
 
 // export routes to be accessible in server.js
