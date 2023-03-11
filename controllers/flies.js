@@ -23,6 +23,18 @@ router.get('/:flyId/edit', (req, res) => {
         .then(fly => {res.send(`you're going to edit ${fly.name}`)})
 })
 
+// update route receives PUT req from edit route, edits properties using form data, redirects back to show/details page with updated info
+router.put('/:flyId', (req, res) => {
+    db.Fly.findByIdAndUpdate(
+        req.params.flyId,
+        req.body,
+        { new: true }
+    )
+        .then(fly => res.json(fly))
+})
+
+
+// show route
 router.get('/:flyId', (req, res) => {
     db.Fly.findById(req.params.flyId)
         .then(fly => {
@@ -33,6 +45,11 @@ router.get('/:flyId', (req, res) => {
             res.json(fly)
         })
 })
+
+// router.post('/:flyId', (req, res) => {
+//     db.Fly.findById(req.params.flyId)
+//         .then(fly =>)
+// })
 
 // add fly, create POST
 router.post('/', (req, res) => {
