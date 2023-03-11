@@ -8,7 +8,9 @@ const db = require('../models')
 // new route: GET
 router.get('/new/:flyId', (req, res) => {
     db.Fly.findById(req.params.flyId)
-    res.send(`you've reached the new route. you'll be making a note of fly ${req.params.flyId}`)
+        .then(fly => {
+            res.send(`you've reached the new route. you'll be making a note of fly ${req.params.flyId}`)
+        })
 })
 
 // create route: POST

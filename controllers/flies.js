@@ -9,7 +9,7 @@ const db = require('../models')
 /* routes 
 ----------------------------------------*/
 router.get('/', (req, res) => {
-    res.send('made it')
+    res.redirect('/')
 })
 
 // new route GET req that renders add fly form

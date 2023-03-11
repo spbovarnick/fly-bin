@@ -55,7 +55,7 @@ app.get('/', function (req, res) {
     // res.send('made it home')
     db.Fly.find({})
         .then(flies => {
-            res.send(flies)
+            res.json(flies)
         })
 })
 
