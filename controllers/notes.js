@@ -20,7 +20,7 @@ router.post('/create/:flyId', (req, res) => {
         { $push: { notes: req.body }},
         { new: true }
     )
-    .then(fly => res.redirect('/fly/' + fly.id))
+    .then(fly => res.json(fly))
 })
 
 
