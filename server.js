@@ -59,6 +59,10 @@ app.get('/', function (req, res) {
     //     })
 })
 
+app.get('/about', (req, res) => {
+    res.send(`it's about time`)
+})
+
 app.get('/seed', function(req, res) {
     // remove existing seed data
     db.Fly.deleteMany({})
