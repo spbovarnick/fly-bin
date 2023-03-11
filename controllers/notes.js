@@ -5,6 +5,15 @@ const db = require('../models')
 
 /* ROUTES
 ----------------------------------------------------------*/
+// show route GET 
+router.get('/:noteId', (req, res) => {
+    db.Fly.findOne(
+        { 'notes._id': req.params.noteId },
+        { 'notes.$': true, _id: false }
+    )
+        .then(note => res.json(note))
+})
+
 // new route: GET
 router.get('/new/:flyId', (req, res) => {
     db.Fly.findById(req.params.flyId)
@@ -22,6 +31,7 @@ router.post('/create/:flyId', (req, res) => {
     )
     .then(fly => res.json(fly))
 })
+
 
 
 // export routes to be accessible in server.js
