@@ -15,6 +15,14 @@ const db = require('./models');
 
 // create express app ---------------------------------------------------
 const app = express();
+// body parser: used for POST/PUT/PATCH routes: takes incoming strings from body that are URL encoded and parses them into object that can be accessed in req param as property called body (req.body)
+app.use(express.urlencoded({ extended: true }));
+// override POST reqs from browser as diff request type
+app.use(methodOverride('_method'))
+
+
+
+
 
 // config app to refresh browser when nodemon restarts, god bless livereload
 const liveReloadServer = livereload.createServer();
@@ -25,19 +33,21 @@ liveReloadServer.server.once("connection", () => {
     }, 100);
 });
 
+
+
 // config the app (app.set) ---------------------------------------------------
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+
+
 
 // middleware (app.use)
 // directs to static assets/files
 app.use(express.static('public'));
 // use the connect livereload pkg to connect nodemon && livereload
 app.use(connectLiveReload());
-// body parser: used for POST/PUT/PATCH routes: takes incoming strings from body that are URL encoded and parses them into object that can be accessed in req param as property called body (req.body)
-app.use(express.urlencoded({ extended: true }));
-// override POST reqs from browser as diff request type
-app.use(methodOverride('_method'))
+
 
 // mount routes ---------------------------------------------------
 // home/landing page
