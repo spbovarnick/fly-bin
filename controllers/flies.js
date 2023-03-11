@@ -28,6 +28,15 @@ router.get('/:flyId', (req, res) => {
         })
 })
 
+// add fly, create POST
+router.post('/', (req, res) => {
+    db.Fly.create(req.body)
+        .then(fly => {
+            res.json(fly)
+        })
+})
+
+
 
 // export routes to be accessible in server.js
 module.exports = router
