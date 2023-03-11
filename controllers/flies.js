@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     res.send('made it')
 })
 
-
+// new route GET req that renders add fly form
 router.get('/new', (req, res) => {
     res.send(`add flies page`)
 })
@@ -46,10 +46,7 @@ router.get('/:flyId', (req, res) => {
         })
 })
 
-// router.post('/:flyId', (req, res) => {
-//     db.Fly.findById(req.params.flyId)
-//         .then(fly =>)
-// })
+
 
 // add fly, create POST
 router.post('/', (req, res) => {
@@ -59,6 +56,11 @@ router.post('/', (req, res) => {
         })
 })
 
+// destroy DELETE route
+router.delete('/:flyId', (req, res) => {
+    db.Fly.findByIdAndRemove(req.params.flyId)
+        .then(res.send(`you deleted that fly`))
+})
 
 
 // export routes to be accessible in server.js
