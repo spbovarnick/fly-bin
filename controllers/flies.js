@@ -8,6 +8,25 @@ const db = require('../models')
 
 /* routes 
 ----------------------------------------*/
+router.get('/', (req, res) => {
+    res.send('made it')
+})
+
+
+router.get('/new', (req, res) => {
+    res.send(`add flies page`)
+})
+
+router.get('/:flyId', (req, res) => {
+    db.Fly.findById(req.params.flyId)
+        .then(fly => {
+            // const flatList = []
+            // for (let note of fly.notes) {
+            //     flatList.push(note)
+            // }
+            res.json(fly)
+        })
+})
 
 
 // export routes to be accessible in server.js
