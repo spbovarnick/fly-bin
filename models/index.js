@@ -8,3 +8,8 @@ const mongodbUri = process.env.MONGODBURI;
     await mongoose.connect(mongodbUri);
     console.log(`Mongoose is connect to ${mongodbUri}`)
 })().catch(err => console.log('Connection error' + err))
+
+module.exports = {
+    Fly: require('./fly'),
+    seedFlies: require('./seed')
+}

@@ -5,9 +5,10 @@ const noteSchema = require('./note');
 const flySchema = new mongoose.Schema({
     name: { type: String, required: true },
     ingredients: { type: String, required: false },
+    hookSize: { type: Number, required: true },
     type: { type: String, required: true }, 
-    species: { type: String, required: false },
-    lifestage: { type: String, required: true },
+    imitating: { type: String, required: false },
+    lifeStage: { type: String, required: false },
     photo: { type: String, required: true },
     notes: [noteSchema]
 })

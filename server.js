@@ -67,14 +67,14 @@ app.get('/seed', function(req, res) {
     // remove existing seed data
     db.Fly.deleteMany({})
         .then(removedFlies => {
-            console.log(`Removed ${removedFlies.length} flies`)
-            
-            // seed fly collection with data
             db.Fly.insertMany(db.seedFlies)
                 .then(addedFlies => {
                     console.log(`Added ${addedFlies.length} flies`)
                     res.json(addedFlies)
                 })
+            console.log(`Removed ${removedFlies.length} flies`)
+            
+            // seed fly collection with data
         })
 })
 
