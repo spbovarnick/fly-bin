@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
 // destroy DELETE route
 router.delete('/:flyId', (req, res) => {
     db.Fly.findByIdAndRemove(req.params.flyId)
-        .then(res.send(`you deleted that fly`))
+        .then(res.redirect(`/flies`))
 })
 
 
