@@ -18,7 +18,9 @@ router.get('/:noteId', (req, res) => {
 router.get('/new/:flyId', (req, res) => {
     db.Fly.findById(req.params.flyId)
         .then(fly => {
-            res.send(`you've reached the new route. you'll be making a note of fly ${req.params.flyId}`)
+            res.render(`note-form`, {
+                fly: fly
+            })
         })
 })
 
@@ -29,7 +31,7 @@ router.post('/create/:flyId', (req, res) => {
         { $push: { notes: req.body }},
         { new: true }
     )
-    .then(fly => res.json(fly))
+    .then(fly => res.redirect(`/flies/${fly.id}`))
 })
 
 // destroy DELETE route

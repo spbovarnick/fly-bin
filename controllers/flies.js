@@ -58,7 +58,14 @@ router.get('/:flyId', (req, res) => {
 router.post('/', (req, res) => {
     db.Fly.create(req.body)
         .then(fly => {
-            res.render(`/flies/ ${fly._id}`)
+            const flatList = []
+            for (let note of fly.notes) {
+                flatList.push(note)
+            }
+            res.render(`fly-detail`, {
+                fly: fly,
+                notes: flatList
+            })
         })
 })
 
