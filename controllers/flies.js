@@ -20,7 +20,10 @@ router.get('/new', (req, res) => {
 // edit route (GET/Read) renders form to edit/PUT fly properites
 router.get('/:flyId/edit', (req, res) => {
     db.Fly.findById(req.params.flyId)
-        .then(fly => {res.send(`you're going to edit ${fly.name}`)})
+        .then(fly => res.render('edit-form', {
+            fly: fly
+        }))
+  
 })
 
 // update route receives PUT req from edit route, edits properties using form data, redirects back to show/details page with updated info
