@@ -42,7 +42,9 @@ router.get('/:flyId', (req, res) => {
             // for (let note of fly.notes) {
             //     flatList.push(note)
             // }
-            res.json(fly)
+            res.render("fly-detail", { 
+                fly: fly
+            })
         })
 })
 

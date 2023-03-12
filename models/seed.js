@@ -6,7 +6,8 @@ const flies = [
       type: "Dry",
       imitating: "Adult Caddisfly",
       lifeStage: "Adult",
-      photo: "/assets/elk-hair-caddis.jpeg"
+      photo: "/assets/elk-hair-caddis.jpeg",
+      quantity: 12
     },
     {
       name: "Pheasant Tail Nymph",
@@ -15,7 +16,8 @@ const flies = [
       type: "Nymph",
       imitating: "Various Mayfly Nymphs",
       lifeStage: "Nymph",
-      photo: "/assets/pheasant-tail.jpeg"
+      photo: "/assets/pheasant-tail.jpeg",
+      quantity: 12
     },
     {
       name: "Woolly Bugger",
@@ -24,7 +26,8 @@ const flies = [
       type: "Streamer",
       imitating: "Leaches, baitfish",
       lifeStage: "N/A",
-      photo: "/assets/woolly-bugger.jpeg"
+      photo: "/assets/woolly-bugger.jpeg",
+      quantity: 12
     },
     {
     name: "Parachute Adams",
@@ -33,7 +36,8 @@ const flies = [
     type: "Dry",
     imitating: "Mayfly",
     lifeStage: "Adult",
-    photo: "/assets/parachute-adams.jpeg"
+    photo: "/assets/parachute-adams.jpeg",
+    quantity: 12
     },
     {
     name: "Zebra Midge",
@@ -42,7 +46,8 @@ const flies = [
     type: "Nymph",
     imitating: "Midge",
     lifeStage: "Larva",
-    photo: "/assets/zebra-midge.jpeg"
+    photo: "/assets/zebra-midge.jpeg",
+    quantity: 12
     },
     {
     name: "Clouser Minnow",
@@ -51,7 +56,8 @@ const flies = [
     type: "Streamer",
     imitating: "Baitfish",
     lifeStage: "N/A",
-    photo: "/assets/clouser.jpeg"
+    photo: "/assets/clouser.jpeg",
+    quantity: 12
     },
     {
     name: "Hare's Ear Nymph",
@@ -60,7 +66,8 @@ const flies = [
     type: "Nymph",
     imitating: "Mayfly, Stonefly",
     lifeStage: "Nymph",
-    photo: "/assets/hares-ear.jpeg"
+    photo: "/assets/hares-ear.jpeg",
+    quantity: 12
     }
   ];
   

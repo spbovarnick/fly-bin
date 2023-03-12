@@ -2,9 +2,21 @@
 <html>
     <head>
         <%- include("./partials/head.ejs", { title: 'Fly Box'})%>
+        <link rel="stylesheet" href="/styles/home.css">
     </head>
     <body>
         <%- include("./partials/nav.ejs")%>
-        <h1> welcome </h1>
+        <h2 class="page-title">Your Fly Bin</h2>
+        <section class="flies-list">
+            <% for (let fly of flies) { %>
+            <div class="fly-card">
+                <h3><%= fly.name %></h3>
+                <img src="<%=fly.photo%>">
+
+                <a class="learn-more btn" href="/flies/<%= fly._id %>">Learn More</a>       
+            </div>
+            <% } %>
+        </section>
+        <%- include('./partials/footer.ejs') %>
     </body>
 </html>

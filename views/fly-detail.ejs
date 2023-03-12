@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include("./partials/head.ejs", { title: `${fly.name}` })%>
+        <link rel="stylesheet" href="/styles/fly-detail.css">
+    </head>
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+        <h2 class="page-title"><%= fly.name %></h2>
+        <div class="detail-div">
+            <img id="detail-img" src="<%= fly.photo %>">
+            <div class="d-card-info">
+                <div class="d-card-info-left">
+                    
+                    
+
+
+                    
+                    
+                </div>
+                <div class="d-card-info-right">
+                    
+                    
+                </div>
+            </div>
+
+
+    </body>
+</html>

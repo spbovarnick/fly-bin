@@ -1,0 +1,39 @@
+
+
+// reset browser defaults
+* {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+/* nav --------------------------
+-----------------------------------*/
+nav {
+    // font-family: 'Rampart One', cursive;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    .nav-brand {
+        display: inline;
+        padding-left: 2.5vw;
+        font-size: 2em;
+    }
+    button {
+        // font-family: 'Rampart One', cursive;
+        font-size: 1.2em;
+        background: none;
+        border: none;
+        display: inline;
+        padding-right: 2.7vw;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
+
+.page-title {
+    margin: 40px auto 30px auto !important;
+    text-align: center;
+}

@@ -10,6 +10,7 @@ const flySchema = new mongoose.Schema({
     imitating: { type: String, required: false },
     lifeStage: { type: String, required: false },
     photo: { type: String, required: true },
+    quantity: { type: Number, required: true },
     notes: [noteSchema]
 })
 
