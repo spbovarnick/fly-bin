@@ -38,12 +38,13 @@ router.put('/:flyId', (req, res) => {
 router.get('/:flyId', (req, res) => {
     db.Fly.findById(req.params.flyId)
         .then(fly => {
-            // const flatList = []
-            // for (let note of fly.notes) {
-            //     flatList.push(note)
-            // }
+            const flatList = []
+            for (let note of fly.notes) {
+                flatList.push(note)
+            }
             res.render("fly-detail", { 
-                fly: fly
+                fly: fly,
+                notes: flatList
             })
         })
 })

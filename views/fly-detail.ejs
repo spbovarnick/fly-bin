@@ -11,18 +11,60 @@
         <div class="detail-div">
             <img id="detail-img" src="<%= fly.photo %>">
             <div class="d-card-info">
+                <p><b>Ingredients: </b><%= fly.ingredients %></p>
+                <p><b>Size: </b><%= fly.hookSize %></p>
+                <p><b>Type: </b><%= fly.type %></p>
+                <p><b>Imititating: </b><%= fly.imitating %></p>
+                <p><b>Lifestage: </b><%= fly.Lifestage %></p>
                 <div class="d-card-info-left">
-                    
-                    
-
-
-                    
                     
                 </div>
                 <div class="d-card-info-right">
                     
-                    
                 </div>
+                <section class="actions">
+                    <!-- change qty buttons -->
+                    <form method="POST" action="/flies/<%= fly._id %>/purchase?_method=PUT">
+                        <input class="btn" type="submit" value="Add Flies">
+                    </form>
+                    <form method="POST" action="/flies/<%= fly._id %>/purchase?_method=PUT">
+                        <input class="btn" type="submit" value="Remove Flies">
+                    </form>
+    
+                    <!-- delete button -->
+                    <form method="POST" action="/flies/<%= fly._id %>/?_method=DELETE">
+                        <input class="btn" type="submit" value="Remove this fly from your bin">
+                    </form>
+                    
+                    <!-- update fly -->
+                    <button>
+                        <a class="btn" href="/flies/<%= fly._id %>/edit">Update Fly</a>
+                    </button>
+    
+                    <button>
+                        <a class="btn" href="/notes/new/<%= fly._id %>">Add a note</a>
+                    </button>
+    
+                </section>
+
+                <section class="notes-box">
+                    <h4>Notes on <%= fly.name %></h4>
+                    <% if ( notes.length === 0) { %>
+                    <p class="no-notes"><b><a class="btn" href="/notes/new/<%= fly._id %>">Add a note for <%= fly.name %></a></b></p>
+                    <% } else { %>
+                    <% for (let note of notes) {%>
+                    <div class="single-review">
+                        <p><b>Date fished:</b> <%= note.dateFished %></p>
+                        <p><b>Air temp:</b> <%= note.airTemp %></p>
+                        <p><b>Water temp:</b> <%= note.wtaerTemp %>/5</p>
+                        <p><b>Conditions:</b> <%= note.conditions %></p>
+                        <div>
+                            <p> <%= note.note %></p>
+                        </div>
+                    </div>
+                    <% } } %>
+                </section>
+
             </div>
 
 
