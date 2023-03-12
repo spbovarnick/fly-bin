@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 // new route GET req that renders add fly form
 router.get('/new', (req, res) => {
-    res.send(`add flies page`)
+    res.render(`fly-form`)
 })
 
 // edit route (GET/Read) renders form to edit/PUT fly properites
