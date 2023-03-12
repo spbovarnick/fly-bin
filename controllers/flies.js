@@ -55,7 +55,7 @@ router.get('/:flyId', (req, res) => {
 router.post('/', (req, res) => {
     db.Fly.create(req.body)
         .then(fly => {
-            res.json(fly)
+            res.render(`/flies/ ${fly._id}`)
         })
 })
 
