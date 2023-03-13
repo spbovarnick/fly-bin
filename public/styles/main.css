@@ -1,9 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
+/* variables
+------------------------------------*/
 * {
   margin: 0;
   padding: 0;
   color: inherit;
   font-family: "Hind", sans-serif;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+button {
+  font-family: "Hind", sans-serif !important;
+  font-size: 1rem;
+  color: white;
+  background-color: #A0522D;
+  border-style: none;
 }
 
 /* nav --------------------------

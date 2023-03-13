@@ -9,12 +9,12 @@
   /* flex-direction: column; */
   flex-wrap: wrap;
   align-content: center;
+  align-items: center;
   justify-items: center;
 }
 .flies-list .fly-card {
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -30,17 +30,28 @@
   top: 30px;
   position: absolute;
 }
-.flies-list .fly-card h3 {
-  width: 100%;
-  margin: 125px auto 30px auto;
-}
-.flies-list .fly-card .nums {
+.flies-list .fly-card figcaption {
   display: flex;
-  width: 300px;
-  justify-content: space-evenly;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
-
-.learn-more .btn {
-  display: block;
-  padding-top: 100px;
+.flies-list .fly-card figcaption h3 {
+  width: 100%;
+  top: 200px;
+  position: absolute;
+}
+.flies-list .fly-card figcaption .nums {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  position: absolute;
+  top: 250px;
+}
+.flies-list .fly-card figcaption button {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  border-radius: 50% 10%;
 }/*# sourceMappingURL=home.css.map */

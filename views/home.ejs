@@ -3,6 +3,7 @@
     <head>
         <%- include("./partials/head.ejs", { title: 'Fly Bin Home'})%>
         <link rel="stylesheet" href="/styles/home.css">
+        <script src="/scripts/inc-dec.js" defer></script>
     </head>
     <body>
         <%- include("./partials/nav.ejs")%>
@@ -17,7 +18,14 @@
                         <a><b>Quantity:</b> <%= fly.quantity %></a>
                         <a><b>Size:</b> <%= fly.hookSize %></a>
                     </div>
-                    <a class="learn-more btn" href="/flies/<%= fly._id %>">see details</a>       
+
+                    <form method="POST" action="/flies/<%= fly._id %>/add?_method=PUT">
+                        <button id="add" type="submit" value="Add a Fly">Add a fly</button>
+                    </form>
+
+                    <button class="btn">
+                        <a class="details" href="/flies/<%= fly._id %>">see details</a>       
+                    </button>
                 </figcaption>
             </figure>
             <% } %>

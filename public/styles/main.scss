@@ -1,11 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
 
+
+/* variables
+------------------------------------*/
+$brown: #5C3A21;
+$green: #556B2F;
+$red: #8B3626;
+$beige: #C9A376;
+$orange: #A0522D;
+$egg: #f0ead6;
+
+
 // reset browser defaults
 * {
     margin: 0;
     padding: 0;
     color: inherit;
-    font-family: 'Hind', sans-serif;;
+    font-family: 'Hind', sans-serif;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+button {
+    font-family: 'Hind', sans-serif !important;
+    font-size: 1rem;
+    color: white;
+    background-color: $orange;
+    border-style: none;
 }
 
 /* nav --------------------------

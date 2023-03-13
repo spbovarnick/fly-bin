@@ -10,11 +10,11 @@
     /* flex-direction: column; */
     flex-wrap: wrap;
     align-content: center;
+    align-items: center;
     justify-items: center;
     .fly-card {
         position: relative;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -27,22 +27,35 @@
         img {
             height: 175px;
             top: 30px;
-            // padding-bottom: 75px;
             position: absolute;
         }
-        h3 {
-            width: 100%;
-            margin: 125px auto 30px auto;
-            // margin-bottom: 50px;
-        }
-        .nums {
+        figcaption {
             display: flex;
-            width: 300px;
-            justify-content: space-evenly ;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            h3 {
+                width: 100%;
+                // margin: 125px auto 30px auto;
+                // margin-bottom: 50px;
+                top: 200px;
+                position: absolute;
+            }
+            .nums {
+                display: flex;
+                justify-content: space-evenly ;
+                width: 100%;
+                position: absolute;
+                top: 250px;
+            }
+            button {
+                position: absolute;
+                bottom: 0;
+                padding: 1rem;
+                border-radius: 50% 10%;
+            }
+
         }
     }
-}
-.learn-more .btn {
-    display: block;
-    padding-top: 100px;
 }

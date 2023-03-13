@@ -17,6 +17,32 @@ router.get('/new', (req, res) => {
     res.render(`fly-form`)
 })
 
+// increment  quantity route
+router.put('/:flyId/increment-qty', (req, res) => {
+    db.Fly.findByIdAndUpdate(
+        req.params.flyId,
+        req.body = { $inc: { quantity: +1 }},
+        { new: true }
+    )    
+        .then(
+            res.redirect('/')
+           
+    )
+})
+
+// decrement quantity route
+router.put('/:flyId/decrement-qty', (req, res) => {
+    db.Fly.findByIdAndUpdate(
+        req.params.flyId,
+        req.body = { $inc: { quantity: -1 }},
+        { new: true }
+    )    
+        .then(
+            res.redirect('/')
+           
+    )
+})
+
 // edit route (GET/Read) renders form to edit/PUT fly properites
 router.get('/:flyId/edit', (req, res) => {
     db.Fly.findById(req.params.flyId)
