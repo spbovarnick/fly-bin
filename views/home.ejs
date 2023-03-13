@@ -9,12 +9,17 @@
         <h2 class="page-title">Your Fly Bin</h2>
         <section class="flies-list">
             <% for (let fly of flies) { %>
-            <div class="fly-card">
-                <h3><%= fly.name %></h3>
+            <figure class="fly-card">
                 <img src="<%=fly.photo%>">
-
-                <a class="learn-more btn" href="/flies/<%= fly._id %>">Learn More</a>       
-            </div>
+                <figcaption>
+                    <h3><%= fly.name %></h3>
+                    <div class="nums">
+                        <a><b>Quantity:</b> <%= fly.quantity %></a>
+                        <a><b>Size:</b> <%= fly.hookSize %></a>
+                    </div>
+                    <a class="learn-more btn" href="/flies/<%= fly._id %>">see details</a>       
+                </figcaption>
+            </figure>
             <% } %>
         </section>
         <%- include('./partials/footer.ejs') %>
