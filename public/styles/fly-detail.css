@@ -1,7 +1,7 @@
 .detail-div {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 20px auto;
   padding: 20px 20px 0 20px;
   border: 1px solid gray;
@@ -9,14 +9,13 @@
   width: 80%;
 }
 .detail-div img {
-  width: 60%;
+  width: 30%;
 }
 .detail-div .d-card-info {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  width: 70%;
+  width: 50%;
 }
 .detail-div .d-card-info #ingredients-div {
   width: 100%;
@@ -50,7 +49,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 }
 .detail-div .d-card-info .actions button {
   margin-top: 1rem;
@@ -75,10 +74,75 @@
   width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  .detail-div {
+    width: 95%;
+    flex-direction: column;
+  }
+  .detail-div img {
+    width: 70%;
+  }
+  .detail-div .d-card-info {
+    width: 95%;
+  }
+  .detail-div .d-card-info #ingredients-div {
+    width: 50%;
+  }
+  .detail-div .d-card-info table {
+    width: 50%;
+  }
+  .detail-div .actions {
+    width: 100%;
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 425px) {
+  .detail-div {
+    width: 95%;
+    margin: 0px auto;
+    flex-direction: column;
+    align-content: center;
+  }
+  .detail-div .d-card-info {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .detail-div .d-card-info #ingredients-div {
+    width: 100%;
+  }
+  .detail-div .d-card-info table {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .detail-div .d-card-info table th {
+    width: 50%;
+  }
+  .detail-div .d-card-info .actions {
+    width: 100%;
+    flex-direction: column;
+    justify-items: center;
+    margin: 0 auto;
+  }
+  .detail-div .d-card-info .actions button, .detail-div .d-card-info .actions form button {
+    width: 130px;
+    padding: 0.7rem;
+    font-size: 0.7rem;
+  }
+  .detail-div .d-card-info .actions button a, .detail-div .d-card-info .actions form button a {
+    font-size: 0.7rem;
+  }
+  .detail-div .d-card-info .notes h4 {
+    padding-left: 0.7rem;
+  }
+}
 @media screen and (max-width: 375px) {
   .detail-div {
     width: 95%;
     margin: 0px auto;
+    flex-direction: column;
+  }
+  .detail-div img {
+    width: 100%;
   }
   .detail-div .d-card-info {
     width: 100%;
@@ -110,54 +174,5 @@
   }
   .detail-div .d-card-info .notes h4 {
     padding-left: 0.7rem;
-  }
-}
-@media screen and (max-width: 425px) {
-  .detail-div {
-    width: 95%;
-    margin: 0px auto;
-  }
-  .detail-div .d-card-info {
-    width: 100%;
-    font-size: 0.8rem;
-  }
-  .detail-div .d-card-info #ingredients-div {
-    width: 100%;
-  }
-  .detail-div .d-card-info table {
-    margin-top: 1rem;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-  .detail-div .d-card-info table th {
-    width: 50%;
-  }
-  .detail-div .d-card-info .actions {
-    flex-direction: column;
-  }
-  .detail-div .d-card-info .actions button, .detail-div .d-card-info .actions form button {
-    width: 130px;
-    padding: 0.7rem;
-    font-size: 0.7rem;
-  }
-  .detail-div .d-card-info .actions button a, .detail-div .d-card-info .actions form button a {
-    font-size: 0.7rem;
-  }
-  .detail-div .d-card-info .notes h4 {
-    padding-left: 0.7rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .detail-div {
-    width: 95%;
-  }
-  .detail-div .d-card-info {
-    width: 95%;
-  }
-  .detail-div .d-card-info #ingredients-div {
-    width: 50%;
-  }
-  .detail-div .d-card-info table {
-    width: 50%;
   }
 }/*# sourceMappingURL=fly-detail.css.map */

@@ -1,8 +1,7 @@
 .detail-div {
     display: flex;
-    // flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 20px auto;
     padding: 20px 20px 0 20px;
     border: 1px solid gray;
@@ -10,15 +9,14 @@
     width: 80%;
     
     img {
-        width: 60%;
+        width: 30%;
     }
     
     .d-card-info {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-        width: 70%;
+        width: 50%;
         
         #ingredients-div {
             width: 100%;
@@ -59,7 +57,7 @@
             width: 50%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
             button {
                 margin-top: 1rem;;
                 padding: 1rem;
@@ -88,10 +86,90 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    .detail-div {
+        width: 95%;
+        flex-direction: column;
+
+        img {
+            width: 70%;
+        }
+
+        .d-card-info {
+            width: 95%;
+            #ingredients-div {
+                width: 50%;
+            }
+            table  {
+                width: 50%;
+            }
+        }
+
+        .actions {
+            width: 100%;
+            flex-direction: row;
+        }
+
+    }
+    
+}
+
+@media screen and (max-width: 425px) {
+    .detail-div {
+        width: 95%;
+        margin: 0px auto;
+        flex-direction: column;
+        align-content: center;
+
+        .d-card-info {
+            width: 100%;
+            font-size: .8rem;
+
+            #ingredients-div {
+                width: 100%;
+            }
+
+            table {
+                margin-top: 1rem;
+                width:100%;
+                th {
+                    width: 50%;
+                }
+            }
+
+            .actions {
+                width: 100%;
+                flex-direction: column;
+                justify-items: center;
+                margin: 0 auto;
+                button, form button {
+                    width: 130px;
+                    padding: .7rem;
+                    font-size: .7rem;
+                    a {
+                    font-size: .7rem;
+                    }
+                }
+            }
+
+            .notes {
+                h4 {
+                    padding-left: .7rem;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 375px) {
     .detail-div {
         width: 95%;
         margin: 0px auto;
+        flex-direction: column;
+
+        img {
+            width: 100%;
+        }
 
         .d-card-info {
             width: 100%;
@@ -133,62 +211,5 @@
     }
 }
 
-@media screen and (max-width: 425px) {
-    .detail-div {
-        width: 95%;
-        margin: 0px auto;
 
-        .d-card-info {
-            width: 100%;
-            font-size: .8rem;
 
-            #ingredients-div {
-                width: 100%;
-            }
-
-            table {
-                margin-top: 1rem;
-                width: fit-content;
-                th {
-                    width: 50%;
-                }
-            }
-
-            .actions {
-                flex-direction: column;
-                button, form button {
-                    width: 130px;
-                    padding: .7rem;
-                    font-size: .7rem;
-                    a {
-                    font-size: .7rem;
-                    }
-                }
-            }
-
-            .notes {
-                h4 {
-                    padding-left: .7rem;
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .detail-div {
-        width: 95%;
-
-        .d-card-info {
-            width: 95%;
-            #ingredients-div {
-                width: 50%;
-            }
-            table  {
-                width: 50%;
-            }
-        }
-
-    }
-    
-}
