@@ -22,7 +22,10 @@
   border-radius: 1rem;
   padding: 0.7rem;
 }
-.detail-div .d-card-info #size-type {
-  display: flex;
-  justify-content: space-evenly;
+.detail-div .d-card-info th {
+  text-align: right;
+  padding-right: 1rem;
+}
+.detail-div .d-card-info #qty-btns {
+  display: inline-flex;
 }/*# sourceMappingURL=fly-detail.css.map */

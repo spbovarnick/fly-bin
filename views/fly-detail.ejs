@@ -21,30 +21,49 @@
                 <p><b>Ingredients: </b></p>
                 <p id="ingredients"><%= fly.ingredients %></p>
                 <% } %>
-
-                <div id="size-type">
-                    <a><b>Size: </b><%= fly.hookSize %></a>
-                    <a><b>Type: </b><%= fly.type %></a>
-                </div>
                 
-                <% if (fly.imitating > 0) { %>
-                <p><b>Imititating: </b><%= fly.imitating %></p>
-                <% } %>
-
-                <% if (fly.lifeStage !== 'N/A') { %>
-                <p><b>Lifestage: </b><%= fly.lifeStage %></p>
-                <% } %>
-                <% console.log(fly.imitating) %>
-                
+                <table>
+                    <tr>
+                        <th>Size:</th>
+                        <td><%= fly.hookSize %></td>
+                    </tr>
+                    <tr>
+                        <th>Type:</th>
+                        <td><%= fly.type %></td>
+                    </tr>
+                    <% if (fly.imitating.length > 0) { %>
+                    <tr>
+                        <th>Imitating: </th>
+                        <td><%= fly.imitating %></td>
+                    </tr>
+                    <% } %>
+                    <% if (fly.lifeStage !== 'N/A') { %>
+                    <tr>
+                        <th>Lifestage:</th>
+                        <td><%= fly.lifeStage %></td>
+                    </tr>
+                    <% } %>
+                    <tr>
+                        <th>Quantity:</th>
+                        <td><%= fly.quantity %></td>
+                    </tr>
+                    <tr>
+                        <th>Update qty:</th>
+                        <td>
+                            <!-- change qty buttons -->
+                            <div id="qty-btns">
+                                <form method="POST" id="inc" action="/flies/<%= fly._id %>/increment-qty?_method=PUT">
+                                    <button class="btn" type="submit" value="Add Flies"> + </button>
+                                </form>
+                                <form method="POST" action="/flies/<%= fly._id %>/decrement-qty?_method=PUT">
+                                    <button class="btn" type="submit" value="Add Flies"> - </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </table>                
                 
                 <section class="actions">
-                    <!-- change qty buttons -->
-                    <form method="POST" id="inc" action="/flies/<%= fly._id %>/increment-qty?_method=PUT">
-                        <button class="btn" type="submit" value="Add Flies">+ Flies</button>
-                    </form>
-                    <form method="POST" action="/flies/<%= fly._id %>/decrement-qty?_method=PUT">
-                        <button class="btn" type="submit" value="Add Flies">- Flies</button>
-                    </form>
     
                     <!-- delete button -->
                     <form method="POST" id="dec" action="/flies/<%= fly._id %>/?_method=DELETE">

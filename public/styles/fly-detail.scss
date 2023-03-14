@@ -24,9 +24,13 @@
             padding: .7rem;
         }
 
-        #size-type {
-            display: flex;
-            justify-content: space-evenly;
+        th {
+            text-align: right;
+            padding-right: 1rem;
+        }
+
+        #qty-btns {
+            display: inline-flex;
         }
     }
 }
