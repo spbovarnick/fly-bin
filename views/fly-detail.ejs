@@ -65,26 +65,29 @@
                 
                 <section class="actions">
     
-                    <!-- delete button -->
-                    <form method="POST" id="dec" action="/flies/<%= fly._id %>/?_method=DELETE">
-                        <button class="btn" type="submit" value="delete flies">delete all of these flies</button>
-                    </form>
+                    
                     
                     <!-- update fly -->
                     <button>
                         <a class="btn" href="/flies/<%= fly._id %>/edit">Update Fly</a>
                     </button>
-    
+                    
+                    <!-- add a note -->
                     <button>
                         <a class="btn" href="/notes/new/<%= fly._id %>">Add a note</a>
-                    </button>
+                    </button><br>
+
+                    <!-- delete button -->
+                    <form method="POST" id="dec" action="/flies/<%= fly._id %>/?_method=DELETE">
+                        <button class="btn" type="submit" value="delete flies">delete all of these flies</button>
+                    </form>
     
                 </section>
 
                 <section class="notes-box">
-                    <h4>Notes on <%= fly.name %></h4>
+                    <h4>Notes on <%= fly.name %>:</h4>
                     <% if ( notes.length === 0) { %>
-                    <p class="no-notes"><b><a class="btn" href="/notes/new/<%= fly._id %>">Add a note for <%= fly.name %></a></b></p>
+                    <p class="no-notes">No notes for <%= fly.name %> yet.</p>
                     <% } else { %>
                     <% for (let note of notes) {%>
                     <div class="single-review">

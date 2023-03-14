@@ -24,6 +24,10 @@ button {
   border-style: none;
 }
 
+table {
+  border-spacing: 0;
+}
+
 /* nav --------------------------
 -----------------------------------*/
 nav {

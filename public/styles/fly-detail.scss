@@ -32,5 +32,11 @@
         #qty-btns {
             display: inline-flex;
         }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
     }
 }

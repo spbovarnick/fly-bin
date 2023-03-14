@@ -28,4 +28,9 @@
 }
 .detail-div .d-card-info #qty-btns {
   display: inline-flex;
+}
+.detail-div .d-card-info .actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }/*# sourceMappingURL=fly-detail.css.map */
