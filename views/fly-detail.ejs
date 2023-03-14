@@ -61,7 +61,7 @@
                             </div>
                         </td>
                     </tr>
-                </table>                
+                </table>              
                 
                 <section class="actions">
     
@@ -74,18 +74,18 @@
                     
                     <!-- add a note -->
                     <button>
-                        <a class="btn" href="/notes/new/<%= fly._id %>">Add a note</a>
-                    </button><br>
+                        <a class="btn" href="/notes/new/<%= fly._id %>">Add Note</a>
+                    </button>
 
                     <!-- delete button -->
                     <form method="POST" id="dec" action="/flies/<%= fly._id %>/?_method=DELETE">
-                        <button class="btn" type="submit" value="delete flies">delete all of these flies</button>
+                        <button class="btn" type="submit" value="delete flies">DELETE COLLECTION</button>
                     </form>
     
                 </section>
 
+                <h4>Notes on <%= fly.name %>:</h4>
                 <section class="notes-box">
-                    <h4>Notes on <%= fly.name %>:</h4>
                     <% if ( notes.length === 0) { %>
                     <p class="no-notes">No notes for <%= fly.name %> yet.</p>
                     <% } else { %>

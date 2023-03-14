@@ -31,12 +31,37 @@
 
         #qty-btns {
             display: inline-flex;
+            button {
+                width: 2rem;
+                margin-right: 10px;
+                border-radius: 50% 10%;
+            }
         }
 
         .actions {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            align-items: center;
+            button {
+                margin-top: 1rem;;
+                padding: 1rem;
+                border-radius: 50% 10%;
+                width: 175px;
+            }
+            button:last-child {
+                background-color: rgb(232, 71, 68);
+            }
+        }
+
+        h4 {
+            margin-top: 2rem;
+        }
+
+        .notes-box {
+            border: 1px solid gray;
+            padding: 10px;
+            border-radius: 20px;
+            width: 100%;
         }
     }
 }

@@ -29,8 +29,31 @@
 .detail-div .d-card-info #qty-btns {
   display: inline-flex;
 }
+.detail-div .d-card-info #qty-btns button {
+  width: 2rem;
+  margin-right: 10px;
+  border-radius: 50% 10%;
+}
 .detail-div .d-card-info .actions {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-items: center;
+}
+.detail-div .d-card-info .actions button {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 50% 10%;
+  width: 175px;
+}
+.detail-div .d-card-info .actions button:last-child {
+  background-color: rgb(232, 71, 68);
+}
+.detail-div .d-card-info h4 {
+  margin-top: 2rem;
+}
+.detail-div .d-card-info .notes-box {
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 20px;
+  width: 100%;
 }/*# sourceMappingURL=fly-detail.css.map */
