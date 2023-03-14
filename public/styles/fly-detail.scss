@@ -15,13 +15,25 @@
     
     .d-card-info {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        // flex-direction: column;
         justify-content: center;
+        width: 70%;
         
-        #ingredients {
-            border: 1px solid lightgray;
-            border-radius: 1rem;
-            padding: .7rem;
+        #ingredients-div {
+            width: 40%;
+            
+            p:last-child {
+                border: 1px solid lightgray;
+                border-radius: 1rem;
+                padding: .7rem;
+                width: 100%;
+            }
+        }
+
+
+        table {
+            width: 40%;
         }
 
         th {
@@ -53,6 +65,9 @@
             }
         }
 
+        .notes {
+            width: 100%;
+        }
         h4 {
             margin-top: 2rem;
         }

@@ -10,6 +10,7 @@
           margin-block-start: 0;
   -webkit-margin-after: 0;
           margin-block-end: 0;
+  box-sizing: border-box;
 }
 
 a:-webkit-any-link {

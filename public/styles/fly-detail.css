@@ -14,13 +14,21 @@
 }
 .detail-div .d-card-info {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
+  width: 70%;
 }
-.detail-div .d-card-info #ingredients {
+.detail-div .d-card-info #ingredients-div {
+  width: 40%;
+}
+.detail-div .d-card-info #ingredients-div p:last-child {
   border: 1px solid lightgray;
   border-radius: 1rem;
   padding: 0.7rem;
+  width: 100%;
+}
+.detail-div .d-card-info table {
+  width: 40%;
 }
 .detail-div .d-card-info th {
   text-align: right;
@@ -47,6 +55,9 @@
 }
 .detail-div .d-card-info .actions button:last-child {
   background-color: rgb(232, 71, 68);
+}
+.detail-div .d-card-info .notes {
+  width: 100%;
 }
 .detail-div .d-card-info h4 {
   margin-top: 2rem;

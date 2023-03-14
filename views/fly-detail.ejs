@@ -17,11 +17,13 @@
             <% } %>
             <div class="d-card-info">
                 
-                <% if (fly.ingredients.length > 0) { %>
-                <p><b>Ingredients: </b></p>
-                <p id="ingredients"><%= fly.ingredients %></p>
-                <% } %>
-                
+                <div id="ingredients-div">
+                    <% if (fly.ingredients.length > 0) { %>
+                    <p><b>Ingredients: </b></p>
+                    <p id="ingredients-list"><%= fly.ingredients %></p>
+                    <% } %>
+                </div>
+
                 <table>
                     <tr>
                         <th>Size:</th>
@@ -84,22 +86,24 @@
     
                 </section>
 
-                <h4>Notes on <%= fly.name %>:</h4>
-                <section class="notes-box">
-                    <% if ( notes.length === 0) { %>
-                    <p class="no-notes">No notes for <%= fly.name %> yet.</p>
-                    <% } else { %>
-                    <% for (let note of notes) {%>
-                    <div class="single-review">
-                        <p><b>Date fished:</b> <%= note.dateFished %></p>
-                        <p><b>Air temp:</b> <%= note.airTemp %></p>
-                        <p><b>Water temp:</b> <%= note.wtaerTemp %></p>
-                        <p><b>Conditions:</b> <%= note.conditions %></p>
-                        <div>
-                            <p> <%= note.note %></p>
+                <section class="notes">
+                    <h4>Notes on <%= fly.name %>:</h4>
+                    <div class="notes-box">
+                        <% if ( notes.length === 0) { %>
+                        <p class="no-notes">No notes for <%= fly.name %> yet.</p>
+                        <% } else { %>
+                        <% for (let note of notes) {%>
+                        <div class="single-review">
+                            <p><b>Date fished:</b> <%= note.dateFished %></p>
+                            <p><b>Air temp:</b> <%= note.airTemp %></p>
+                            <p><b>Water temp:</b> <%= note.wtaerTemp %></p>
+                            <p><b>Conditions:</b> <%= note.conditions %></p>
+                            <div>
+                                <p> <%= note.note %></p>
+                            </div>
                         </div>
+                        <% } } %>
                     </div>
-                    <% } } %>
                 </section>
 
             </div>
