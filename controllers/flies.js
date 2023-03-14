@@ -3,9 +3,6 @@ const express = require('express');
 // router allows routing outside server.js
 const router = express.Router()
 
-const cookie = require('cookie');
-const cookieParser = require('cookie-parser')
-
 // req the db connex and models
 const db = require('../models')
 
