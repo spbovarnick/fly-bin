@@ -20,7 +20,7 @@
                 <div id="ingredients-div">
                     <% if (fly.ingredients.length > 0) { %>
                     <p><b>Ingredients: </b></p>
-                    <p id="ingredients-list"><%= fly.ingredients %></p>
+                    <p><%= fly.ingredients %></p>
                     <% } %>
                 </div>
 
@@ -67,8 +67,6 @@
                 
                 <section class="actions">
     
-                    
-                    
                     <!-- update fly -->
                     <button>
                         <a class="btn" href="/flies/<%= fly._id %>/edit">Update Fly</a>

@@ -1,27 +1,32 @@
 .detail-div {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 20px auto;
     padding: 20px 20px 0 20px;
     border: 1px solid gray;
     border-radius: 30px;
-    width: 70%;
+    width: 80%;
     
     img {
-        width: 100%;
+        width: 60%;
     }
     
     .d-card-info {
         display: flex;
         flex-wrap: wrap;
-        // flex-direction: column;
         justify-content: center;
+        align-items: center;
         width: 70%;
         
         #ingredients-div {
-            width: 40%;
+            width: 100%;
+            height: 100%;
+
+            p:first-child {
+                padding-left: .7rem;
+            }
             
             p:last-child {
                 border: 1px solid lightgray;
@@ -33,13 +38,13 @@
 
 
         table {
-            width: 40%;
+            width: 50%;
+            th {
+                text-align: right;
+                padding-right: 1rem;
+            }
         }
 
-        th {
-            text-align: right;
-            padding-right: 1rem;
-        }
 
         #qty-btns {
             display: inline-flex;
@@ -51,9 +56,10 @@
         }
 
         .actions {
+            width: 50%;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: space-between;
             button {
                 margin-top: 1rem;;
                 padding: 1rem;
@@ -66,10 +72,11 @@
         }
 
         .notes {
-            width: 100%;
-        }
-        h4 {
-            margin-top: 2rem;
+            width: calc(100% + 2rem);
+            h4 {
+                margin-top: 1rem;
+                padding-left: .7rem;
+            }
         }
 
         .notes-box {
@@ -79,4 +86,109 @@
             width: 100%;
         }
     }
+}
+
+@media screen and (max-width: 375px) {
+    .detail-div {
+        width: 95%;
+        margin: 0px auto;
+
+        .d-card-info {
+            width: 100%;
+            font-size: .8rem;
+
+            #ingredients-div {
+                width: 100%;
+                p:first-child {
+                    padding-left: .7rem;
+                }
+            }
+
+            table {
+                margin-top: 1rem;
+                width: 100%;
+                th {
+                    width: 50%;
+                }
+            }
+
+            .actions {
+                flex-direction: column;
+                button, form button {
+                    width: 130px;
+                    padding: .7rem;
+                    font-size: .7rem;
+                    a {
+                    font-size: .7rem;
+                    }
+                }
+            }
+
+            .notes {
+                h4 {
+                    padding-left: .7rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .detail-div {
+        width: 95%;
+        margin: 0px auto;
+
+        .d-card-info {
+            width: 100%;
+            font-size: .8rem;
+
+            #ingredients-div {
+                width: 100%;
+            }
+
+            table {
+                margin-top: 1rem;
+                width: fit-content;
+                th {
+                    width: 50%;
+                }
+            }
+
+            .actions {
+                flex-direction: column;
+                button, form button {
+                    width: 130px;
+                    padding: .7rem;
+                    font-size: .7rem;
+                    a {
+                    font-size: .7rem;
+                    }
+                }
+            }
+
+            .notes {
+                h4 {
+                    padding-left: .7rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .detail-div {
+        width: 95%;
+
+        .d-card-info {
+            width: 95%;
+            #ingredients-div {
+                width: 50%;
+            }
+            table  {
+                width: 50%;
+            }
+        }
+
+    }
+    
 }
