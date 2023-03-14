@@ -3,37 +3,52 @@
     <head>
         <%- include("./partials/head.ejs", { title: `${fly.name}` })%>
         <link rel="stylesheet" href="/styles/fly-detail.css">
+        <script src="" defer></script>
     </head>
     <body>
         <%- include("./partials/nav.ejs") %>
 
         <h2 class="page-title"><%= fly.name %></h2>
         <div class="detail-div">
+            <% if (fly.photo.length > 0) { %>
             <img id="detail-img" src="<%= fly.photo %>">
+            <% } else { %>
+            <img id="detail-img" src="/assets/no-photo.jpeg">
+            <% } %>
             <div class="d-card-info">
-                <p><b>Ingredients: </b><%= fly.ingredients %></p>
-                <p><b>Size: </b><%= fly.hookSize %></p>
-                <p><b>Type: </b><%= fly.type %></p>
+                
+                <% if (fly.ingredients.length > 0) { %>
+                <p><b>Ingredients: </b></p>
+                <p id="ingredients"><%= fly.ingredients %></p>
+                <% } %>
+
+                <div id="size-type">
+                    <a><b>Size: </b><%= fly.hookSize %></a>
+                    <a><b>Type: </b><%= fly.type %></a>
+                </div>
+                
+                <% if (fly.imitating > 0) { %>
                 <p><b>Imititating: </b><%= fly.imitating %></p>
-                <p><b>Lifestage: </b><%= fly.Lifestage %></p>
-                <div class="d-card-info-left">
-                    
-                </div>
-                <div class="d-card-info-right">
-                    
-                </div>
+                <% } %>
+
+                <% if (fly.lifeStage !== 'N/A') { %>
+                <p><b>Lifestage: </b><%= fly.lifeStage %></p>
+                <% } %>
+                <% console.log(fly.imitating) %>
+                
+                
                 <section class="actions">
                     <!-- change qty buttons -->
-                    <form method="POST" action="/flies/<%= fly._id %>/purchase?_method=PUT">
-                        <input class="btn" type="submit" value="Add Flies">
+                    <form method="POST" id="inc" action="/flies/<%= fly._id %>/increment-qty?_method=PUT">
+                        <button class="btn" type="submit" value="Add Flies">+ Flies</button>
                     </form>
-                    <form method="POST" action="/flies/<%= fly._id %>/purchase?_method=PUT">
-                        <input class="btn" type="submit" value="Remove Flies">
+                    <form method="POST" action="/flies/<%= fly._id %>/decrement-qty?_method=PUT">
+                        <button class="btn" type="submit" value="Add Flies">- Flies</button>
                     </form>
     
                     <!-- delete button -->
-                    <form method="POST" action="/flies/<%= fly._id %>/?_method=DELETE">
-                        <input class="btn" type="submit" value="Remove this fly from your bin">
+                    <form method="POST" id="dec" action="/flies/<%= fly._id %>/?_method=DELETE">
+                        <button class="btn" type="submit" value="delete flies">delete all of these flies</button>
                     </form>
                     
                     <!-- update fly -->
@@ -56,7 +71,7 @@
                     <div class="single-review">
                         <p><b>Date fished:</b> <%= note.dateFished %></p>
                         <p><b>Air temp:</b> <%= note.airTemp %></p>
-                        <p><b>Water temp:</b> <%= note.wtaerTemp %>/5</p>
+                        <p><b>Water temp:</b> <%= note.wtaerTemp %></p>
                         <p><b>Conditions:</b> <%= note.conditions %></p>
                         <div>
                             <p> <%= note.note %></p>

@@ -7,8 +7,26 @@
     padding: 20px 20px 0 20px;
     border: 1px solid gray;
     border-radius: 30px;
-    width: 60%;
+    width: 70%;
+    
     img {
         width: 100%;
+    }
+    
+    .d-card-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        #ingredients {
+            border: 1px solid lightgray;
+            border-radius: 1rem;
+            padding: .7rem;
+        }
+
+        #size-type {
+            display: flex;
+            justify-content: space-evenly;
+        }
     }
 }

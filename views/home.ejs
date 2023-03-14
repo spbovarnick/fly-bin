@@ -11,7 +11,12 @@
         <section class="flies-list">
             <% for (let fly of flies) { %>
             <figure class="fly-card">
-                <img src="<%=fly.photo%>">
+                <% if (fly.photo.length > 0) { %>
+                <img src="<%= fly.photo %>">
+                <% } else { %>
+                <img src="/assets/no-photo.jpeg">
+                <% } %>
+                
                 <figcaption>
                     <h3><%= fly.name %></h3>
                     <div class="nums">
@@ -19,11 +24,7 @@
                         <a><b>Size:</b> <%= fly.hookSize %></a>
                     </div>
 
-                    <form method="POST" action="/flies/<%= fly._id %>/add?_method=PUT">
-                        <button id="add" type="submit" value="Add a Fly">Add a fly</button>
-                    </form>
-
-                    <button class="btn">
+                    <button id="details" class="btn">
                         <a class="details" href="/flies/<%= fly._id %>">see details</a>       
                     </button>
                 </figcaption>

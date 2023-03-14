@@ -1,4 +1,4 @@
-const add = document.findElementById('add');
-add.addEventLisetner('click', function() {
-    alert(`you added one`)
-})
+// const add = document.getElementById('add');
+// add.addEventListener('click', function() {
+//     alert(`you added one`)
+// })

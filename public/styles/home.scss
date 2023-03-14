@@ -51,9 +51,28 @@
             }
             button {
                 position: absolute;
-                bottom: 0;
                 padding: 1rem;
                 border-radius: 50% 10%;
+            }
+            #qty-actions {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                form {
+                    width: 100%;
+                    position: absolute;
+                }
+
+                // #inc {
+                //     bottom: 30px;
+    
+                // }
+                // #dec {
+                //     bottom: 30px;
+                // }
+            }
+            #details {
+                bottom: 0px;
             }
 
         }

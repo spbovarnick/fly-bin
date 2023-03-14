@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "connect-livereload": "^0.6.1",
+    "cookie": "^0.5.0",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "expres": "^0.0.5",

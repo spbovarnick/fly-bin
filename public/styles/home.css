@@ -51,7 +51,18 @@
 }
 .flies-list .fly-card figcaption button {
   position: absolute;
-  bottom: 0;
   padding: 1rem;
   border-radius: 50% 10%;
+}
+.flies-list .fly-card figcaption #qty-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.flies-list .fly-card figcaption #qty-actions form {
+  width: 100%;
+  position: absolute;
+}
+.flies-list .fly-card figcaption #details {
+  bottom: 0px;
 }/*# sourceMappingURL=home.css.map */

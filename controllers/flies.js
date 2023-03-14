@@ -3,8 +3,12 @@ const express = require('express');
 // router allows routing outside server.js
 const router = express.Router()
 
+const cookie = require('cookie');
+const cookieParser = require('cookie-parser')
+
 // req the db connex and models
 const db = require('../models')
+
 
 /* routes 
 ----------------------------------------*/
@@ -23,11 +27,10 @@ router.put('/:flyId/increment-qty', (req, res) => {
         req.params.flyId,
         req.body = { $inc: { quantity: +1 }},
         { new: true }
-    )    
-        .then(
-            res.redirect('/')
-           
-    )
+        )        
+            .then(fly => {
+                res.redirect(`/flies/${fly.id}`)          
+            })
 })
 
 // decrement quantity route
@@ -36,11 +39,11 @@ router.put('/:flyId/decrement-qty', (req, res) => {
         req.params.flyId,
         req.body = { $inc: { quantity: -1 }},
         { new: true }
-    )    
-        .then(
-            res.redirect('/')
-           
-    )
+    )   
+        .then(fly => {
+            res.redirect(`/flies/${fly.id}`)          
+        })
+        
 })
 
 // edit route (GET/Read) renders form to edit/PUT fly properites
@@ -88,10 +91,7 @@ router.post('/', (req, res) => {
             for (let note of fly.notes) {
                 flatList.push(note)
             }
-            res.render(`fly-detail`, {
-                fly: fly,
-                notes: flatList
-            })
+            res.redirect(`/flies/${fly.id}`)
         })
 })
 
