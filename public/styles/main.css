@@ -32,7 +32,6 @@ table {
 /* nav --------------------------
 -----------------------------------*/
 nav {
-  border: 2px solid green;
   position: relative;
   padding-top: 1rem;
   overflow: hidden;

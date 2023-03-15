@@ -9,13 +9,16 @@
         <h2 class="page-title">Update <%= fly.name %></h2>
         <div class="form-holder">
             <form method="POST" action="/flies/<%= fly._id %>?_method=PUT">
-                <label for="name">Fly Name:</label>
+
+                <label for="name"><b>Fly Name:</b></label>
                 <input type="text" id="name" name="name" value="<%= fly.name %>" required>
+                <br>
             
-                <label for="ingredients">Ingredients:</label>
+                <label for="ingredients"><b>Ingredients:</b></label>
                 <input type="text" id="ingredients" name="ingredients" value="<%= fly.ingredients %>">
+                <br>
             
-                <label for="hookSize">Hook Size:</label>
+                <label for="hookSize"><b>Hook Size:</b></label>
                 <select id="hookSize" name="hookSize" required>
                     <option value="<%= fly.hookSize %>" selected><%= fly.hookSize %></option>
                     <option value="2/0">2/0</option>
@@ -33,8 +36,9 @@
                     <option value="20">20</option>
                     <option value="22">22</option>
                 </select>
+                <br>
             
-                <label for="type">Type:</label>
+                <label for="type"><b>Type:</b></label>
                 <select id="type" name="type" required>
                     <option value="<%= fly.type %>" selected><%= fly.type %></option>
                     <option value="nymph">nymph</option>
@@ -44,11 +48,13 @@
                     <option value="emerger">emerger</option>
                     <option value="dry">dry</option>
                 </select>
+                <br>
             
-                <label for="imitating">Imitating:</label>
+                <label for="imitating"><b>Imitating:</b></label>
                 <input type="text" id="imitating" name="imitating" value="<%= fly.imitating %>">
+                <br>
             
-                <label for="lifeStage">Life Stage:</label>
+                <label for="lifeStage"><b>Life Stage:</b></label>
                 <select id="lifeStage" name="lifeStage">
                     <option value="<%= fly.lifeStage %>"><%= fly.lifeStage %></option>
                     <option value="nymph">nymph</option>
@@ -59,12 +65,14 @@
                     <option value="cripple">cripple</option>
                     <option value="N/A">N/A</option>
                 </select>
+                <br>
 
             
-                <label for="photo">Photo:</label>
+                <label for="photo"><b>Photo:</b></label>
                 <input type="text" id="photo" name="photo" value="<%= fly.photo %>">
+                <br>
             
-                <label for="quantity">Quantity:</label>
+                <label for="quantity"><b>Quantity:</b></label>
                 <input type="number" id="quantity" name="quantity" min="1" step="1" value="<%= fly.quantity %>" required>
                 <br>
             
