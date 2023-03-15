@@ -31,28 +31,32 @@ table {
 
 /* nav --------------------------
 -----------------------------------*/
-.topnav {
+nav {
+  border: 2px solid green;
+  position: relative;
   padding-top: 1rem;
   overflow: hidden;
 }
-.topnav .nav-brand {
-  padding-left: 3rem;
+nav .nav-brand {
+  position: absolute;
+  left: 4rem;
 }
-.topnav .break {
+nav .break {
   display: none;
 }
-.topnav h1 {
+nav h1 {
   display: inline;
   float: left;
 }
-.topnav a {
+nav a:not(:first-child) {
   float: right;
   text-decoration: none;
   font-size: 1.2em;
   padding-right: 2.7vw;
   color: black;
+  padding: 0 1rem;
 }
-.topnav .icon {
+nav .icon {
   display: none;
 }
 
@@ -62,18 +66,16 @@ table {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav a {
+  nav a:not(:first-child) {
     display: none;
   }
-  .topnav a.icon {
+  nav a.icon {
     float: right;
     display: block;
+    padding-left: 1rem;
   }
 }
 @media screen and (max-width: 600px) {
-  .topnav.responsive {
-    position: relative;
-  }
   .topnav.responsive .break {
     display: block;
   }

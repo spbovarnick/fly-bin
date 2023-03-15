@@ -40,11 +40,15 @@ table {
 
 /* nav --------------------------
 -----------------------------------*/
-.topnav {
+nav {
+    border: 2px solid green;
+    position: relative;
     padding-top: 1rem;
     overflow: hidden;
     .nav-brand {
-        padding-left: 3rem;
+        // padding-left: 3rem;
+        position: absolute;
+        left: 4rem;
     }
     .break {
         display: none;
@@ -53,42 +57,19 @@ table {
         display: inline;
         float: left;
     }
-    a {
+    a:not(:first-child) {
         float: right;
-        // display: block;
         text-decoration: none;
         font-size: 1.2em;
         padding-right: 2.7vw;
         color: black;
+        padding: 0 1rem;
     }
     .icon {
         display: none;
     }
 }
 
-
-// nav {
-//     // font-family: 'Rampart One', cursive;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: baseline;
-//     .nav-brand {
-//         display: inline;
-//         padding-left: 2.5vw;
-//         font-size: 2em;
-//     }
-//     a {
-//         // font-family: 'Rampart One', cursive;
-//         font-size: 1.2em;
-//         background: none;
-//         border: none;
-//         display: inline;
-//         padding-right: 2.7vw;
-//         text-decoration: none;
-//         color: black;
-
-//     }
-// }
 
 .page-title {
     margin: 40px auto 30px auto !important;
@@ -98,13 +79,15 @@ table {
 
 // screen less than 600px, hid all links. show link that should open and close top nav (.icon)
 @media screen and (max-width: 600px) {
-    .topnav {
-        a {
+    
+    nav {
+        a:not(:first-child) {
             display: none;
         }
         a.icon {
             float: right;
             display: block;
+            padding-left: 1rem;
         }
     }
 }
@@ -112,7 +95,7 @@ table {
 // "responsive" class is added to topnav with JS when user clicks on icon
 @media screen and (max-width: 600px) {
     .topnav.responsive {
-        position: relative;
+        // position: relative;
         .break {
             display: block;
         }

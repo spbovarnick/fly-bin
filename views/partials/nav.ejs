@@ -1,11 +1,11 @@
 
 <!-- nav adapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
-<nav class="topnav responsive" id="myTopnav">
-    <h1 class="nav-brand"><span class="hide-brand">FlyBin</span></h1>
+<nav class="topnav" id="myTopnav">
+    <h1 class="nav-brand"><span class="hide-brand"><a href="/">FlyBin</a></span></h1>
     
     <br class="break">
     <br class="break">
-    <a href="/">Home</a>
+    <a id="home" href="/">Home</a>
     <a href="/about">About</a>
     <a href="/flies/new">Add Flies</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -15,12 +15,15 @@
 </nav>
 
 <script defer>
+
     function myFunction() {
-    const x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += "responsive";
+    const nav = document.querySelector("nav");
+    if (nav.className === "topnav") {
+        nav.className += " responsive";
     } else {
-        x.className = "topnav";
+        nav.className = "topnav";
     }
     }
+
+
 </script>
