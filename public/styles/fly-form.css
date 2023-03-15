@@ -11,7 +11,7 @@ form {
   align-items: center;
   width: 90%;
 }
-form input, form select {
+form input, form select, form textarea {
   padding: 1rem 0.2rem;
   width: 100%;
   display: block;

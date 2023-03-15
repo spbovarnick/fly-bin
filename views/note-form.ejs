@@ -2,31 +2,31 @@
 <html>
     <head>
         <%- include("./partials/head.ejs", { title: 'New Note'}) %>
-        <link rel="stylesheet" href="/styles/new-note.css">
+        <link rel="stylesheet" href="/styles/fly-form.css">
     </head>
     <body>
         <%- include("./partials/nav.ejs") %>
-        <h1>Add A Note for <%= fly.name %></h1>
+        <h1 class="page-title">Add A Note for <%= fly.name %></h1>
 
-
-        <form method="POST" action="/notes/create/<%= fly._id %>">
-            <label for="dateFished">Date Fished:</label>
-            <input type="date" id="dateFished" name="dateFished"><br><br>
-            
-            <label for="airTemp">Air Temperature:</label>
-            <input type="number" id="airTemp" name="airTemp"><br><br>
-            
-            <label for="waterTemp">Water Temperature:</label>
-            <input type="number" id="waterTemp" name="waterTemp"><br><br>
-            
-            <label for="conditions">Conditions:</label>
-            <input type="text" id="conditions" name="conditions"><br><br>
-            
-            <label for="note">Note:</label>
-            <textarea id="note" name="note" required></textarea><br><br>
-            
-            <input type="submit" value="Create Note">
-          </form>
-
+        <div class="form-holder">
+            <form method="POST" action="/notes/create/<%= fly._id %>">
+                <label for="dateFished"><b>Date Fished:</b></label>
+                <input type="date" id="dateFished" name="dateFished"><br><br>
+                
+                <label for="airTemp">Air Temperature:</label>
+                <input type="number" id="airTemp" name="airTemp"><br><br>
+                
+                <label for="waterTemp">Water Temperature:</label>
+                <input type="number" id="waterTemp" name="waterTemp"><br><br>
+                
+                <label for="conditions">Conditions:</label>
+                <input type="text" id="conditions" name="conditions"><br><br>
+                
+                <label for="note">Note:</label>
+                <textarea id="note" name="note" required></textarea><br><br>
+                
+                <button type="submit">Create Note</button>
+            </form>
+        </div>
     </body>
 </html>
