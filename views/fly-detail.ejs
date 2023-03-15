@@ -107,7 +107,11 @@
                                 <% } %>
                             </p>
                             <p><b>Conditions:</b> <%= note.conditions %></p>
-                            <% console.log(note.timestamp) %>
+                            <p><b>Written on:</b>
+                                <% const writtenDate = new Date(note.createdAt) %>
+                                <%= writtenDate.toDateString() %>
+                            </p>
+                            <% console.log(note.createdAt) %>
                             <div>
                                 <p><b>Note:</b></p>
                                 <p> <%= note.note %></p>
