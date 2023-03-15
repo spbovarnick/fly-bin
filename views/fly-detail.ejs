@@ -23,7 +23,7 @@
                     <% } %>
                 </div>
 
-                <table>
+                <table id="fly-table">
                     <tr>
                         <th>Size:</th>
                         <td><%= fly.hookSize %></td>
@@ -84,45 +84,66 @@
                 </section>
 
                 <section class="notes">
-                    <h4>Notes on <%= fly.name %>:</h4>
+                    <p><b>Notes on <%= fly.name %>:</b></p>
                     <div class="notes-box">
                         <% if ( notes.length === 0) { %>
                         <p class="no-notes">No notes for <%= fly.name %> yet.</p>
                         <% } else { %>
                         <% for (let note of notes) {%>
-                        <div class="single-review">
-                            <p><b>Date fished:</b> 
-                                <% if (note.dateFished !== null) { %> 
-                                <% const date = new Date(note.dateFished); %> <%= date.toDateString() %> 
-                                <% } %> 
-                            </p>
-                            <p><b>Air temp:</b> 
-                                <% if (note.airTemp !== null) { %>
-                                    <%= note.airTemp %>&#176F
-                                    <% } %>
-                            </p>
-                            <p><b>Water temp:</b> 
-                                <% if (note.waterTemp !== null) { %>
-                                <%= note.waterTemp %>&#176F
-                                <% } %>
-                            </p>
-                            <p><b>Conditions:</b> <%= note.conditions %></p>
-                            <p><b>Written on:</b>
+                        
+                        <div class="single-note">
+                            <table>
+                                <tr>
+                                    <th><b>Date fished:</b></th>
+                                    <td><% if (note.dateFished !== null) { %> 
+                                        <% const date = new Date(note.dateFished); %> <%= date.toDateString() %> 
+                                        <% } %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Air temp:</th>
+                                    <td>
+                                        <% if (note.airTemp !== null) { %>
+                                        <%= note.airTemp %>&#176F
+                                        <% } %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Water temp:</th>
+                                    <td>
+                                        <% if (note.waterTemp !== null) { %>
+                                        <%= note.waterTemp %>&#176F
+                                        <% } %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Conditions:</th>
+                                    <td>
+                                        <%= note.conditions %>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div id="note-body">
                                 <% const writtenDate = new Date(note.createdAt) %>
-                                <%= writtenDate.toDateString() %>
-                            </p>
-                            <% console.log(note.createdAt) %>
-                            <div>
-                                <p><b>Note:</b></p>
-                                <p> <%= note.note %></p>
+                                <p>
+                                    <b>Note written on 
+                                    <%= writtenDate.toDateString() %>:</b>
+                                </p>
+                                <p>
+                                    <%= note.note %>
+                                </p>
                             </div>
                         </div>
+
+
+                        
+                        
                         <% } } %>
                     </div>
                 </section>
 
             </div>
-
+        </div>
 
     </body>
 </html>

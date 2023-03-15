@@ -35,7 +35,7 @@
         }
 
 
-        table {
+        #fly-table {
             width: 50%;
             th {
                 text-align: right;
@@ -71,18 +71,56 @@
 
         .notes {
             width: calc(100% + 2rem);
-            h4 {
+            
+            
+            p:first-of-type {
                 margin-top: 1rem;
                 padding-left: .7rem;
             }
+
+            .notes-box {
+                border: 1px solid gray;
+                padding: 10px;
+                border-radius: 20px;
+                width: 100%;
+                overflow-y: scroll;
+                height: 300px;
+                font-size: .9rem;
+
+                .single-note {
+                    padding: 1em;
+                    border: 1px solid lightgray;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    table {
+                        
+                        th {
+                            text-align: right;
+                            
+                        }
+                        td {
+                            padding-left: 1rem;
+                            width: 125px;
+                        }
+                    }
+                    #note-body {
+                        width: 55%;
+                        p:last-child {
+                            border: 1px solid lightgray;
+                            border-radius: 5px;
+                            padding: .5rem;
+                            font-size: .8rem;
+                        }
+                    }
+    
+                }
+            }
+            
+
         }
 
-        .notes-box {
-            border: 1px solid gray;
-            padding: 10px;
-            border-radius: 20px;
-            width: 100%;
-        }
+        
     }
 }
 

@@ -30,10 +30,10 @@
   padding: 0.7rem;
   width: 100%;
 }
-.detail-div .d-card-info table {
+.detail-div .d-card-info #fly-table {
   width: 50%;
 }
-.detail-div .d-card-info table th {
+.detail-div .d-card-info #fly-table th {
   text-align: right;
   padding-right: 1rem;
 }
@@ -63,15 +63,41 @@
 .detail-div .d-card-info .notes {
   width: calc(100% + 2rem);
 }
-.detail-div .d-card-info .notes h4 {
+.detail-div .d-card-info .notes p:first-of-type {
   margin-top: 1rem;
   padding-left: 0.7rem;
 }
-.detail-div .d-card-info .notes-box {
+.detail-div .d-card-info .notes .notes-box {
   border: 1px solid gray;
   padding: 10px;
   border-radius: 20px;
   width: 100%;
+  overflow-y: scroll;
+  height: 300px;
+  font-size: 0.9rem;
+}
+.detail-div .d-card-info .notes .notes-box .single-note {
+  padding: 1em;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.detail-div .d-card-info .notes .notes-box .single-note table th {
+  text-align: right;
+}
+.detail-div .d-card-info .notes .notes-box .single-note table td {
+  padding-left: 1rem;
+  width: 125px;
+}
+.detail-div .d-card-info .notes .notes-box .single-note #note-body {
+  width: 55%;
+}
+.detail-div .d-card-info .notes .notes-box .single-note #note-body p:last-child {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 0.8rem;
 }
 
 @media screen and (max-width: 768px) {
