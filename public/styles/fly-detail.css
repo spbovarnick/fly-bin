@@ -59,12 +59,16 @@
 .detail-div .d-card-info .actions button:last-child {
   background-color: rgb(232, 71, 68);
 }
+.detail-div .d-card-info .line {
+  width: 100%;
+  border: 0.5px solid gray;
+  margin: 1rem 0;
+}
 .detail-div .d-card-info .notes {
   width: calc(100% + 2rem);
 }
 .detail-div .d-card-info .notes p:first-of-type {
-  margin-top: 1rem;
-  padding-left: 0.7rem;
+  padding-left: 1rem;
 }
 .detail-div .d-card-info .notes .notes-box::-webkit-scrollbar {
   width: 0.7em;

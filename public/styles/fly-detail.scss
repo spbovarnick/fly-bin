@@ -68,14 +68,17 @@
                 background-color: rgb(232, 71, 68);
             }
         }
-
+        .line {
+            width: 100%;
+            border: .5px solid gray;
+            margin: 1rem 0;
+        }
         .notes {
             width: calc(100% + 2rem);
             
             
             p:first-of-type {
-                margin-top: 1rem;
-                padding-left: .7rem;
+                padding-left: 1rem;
             }
 
             .notes-box::-webkit-scrollbar {
