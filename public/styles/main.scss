@@ -41,9 +41,12 @@ table {
 /* nav --------------------------
 -----------------------------------*/
 .topnav {
-    display: flex;
-    align-items: baseline;
+    // display: flex;
+    // align-items: baseline;
     overflow: hidden;
+    .break {
+        display: none;
+    }
     h1 {
         display: inline;
         float: left;
@@ -94,6 +97,9 @@ table {
 // screen less than 600px, hid all links. show link that should open and close top nav (.icon)
 @media screen and (max-width: 600px) {
     .topnav {
+        a {
+            display: none;
+        }
         a.icon {
             float: right;
             display: block;
@@ -105,7 +111,9 @@ table {
 @media screen and (max-width: 600px) {
     .topnav.responsive {
         position: relative;
-
+        .break {
+            display: block;
+        }
         a.icon {
             position: absolute;
             right: 0;
@@ -114,7 +122,7 @@ table {
         a {
             float: none;
             display: block;
-            text-align: left;
+            text-align: center;
         }
     }
 }
