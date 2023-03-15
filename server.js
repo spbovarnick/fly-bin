@@ -63,7 +63,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/about', (req, res) => {
-    res.send(`it's about time`)
+    res.render('about')
 })
 
 app.get('/seed', function(req, res) {
