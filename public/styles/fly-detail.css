@@ -20,7 +20,6 @@
 }
 .detail-div .d-card-info #ingredients-div {
   width: 100%;
-  height: 100%;
 }
 .detail-div .d-card-info #ingredients-div p:first-child {
   padding-left: 0.7rem;
@@ -92,7 +91,7 @@
   .detail-div .d-card-info table {
     width: 50%;
   }
-  .detail-div .actions {
+  .detail-div .d-card-info .actions {
     width: 100%;
     flex-direction: row;
   }

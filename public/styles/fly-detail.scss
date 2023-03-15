@@ -21,7 +21,7 @@
         
         #ingredients-div {
             width: 100%;
-            height: 100%;
+            // height: 100%;
 
             p:first-child {
                 padding-left: .7rem;
@@ -104,12 +104,12 @@
             table  {
                 width: 50%;
             }
+            .actions {
+                width: 100%;
+                flex-direction: row;
+            }
         }
 
-        .actions {
-            width: 100%;
-            flex-direction: row;
-        }
 
     }
     
