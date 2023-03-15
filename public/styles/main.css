@@ -41,16 +41,17 @@ nav .nav-brand {
   padding-left: 2.5vw;
   font-size: 2em;
 }
-nav button {
+nav a {
   font-size: 1.2em;
   background: none;
   border: none;
   display: inline;
   padding-right: 2.7vw;
-}
-nav button a {
   text-decoration: none;
   color: black;
+}
+nav a .icon {
+  display: none;
 }
 
 .page-title {

@@ -50,16 +50,17 @@ nav {
         padding-left: 2.5vw;
         font-size: 2em;
     }
-    button {
+    a {
         // font-family: 'Rampart One', cursive;
         font-size: 1.2em;
         background: none;
         border: none;
         display: inline;
         padding-right: 2.7vw;
-        a {
-            text-decoration: none;
-            color: black;
+        text-decoration: none;
+        color: black;
+        .icon {
+            display: none;
         }
     }
 }
