@@ -6,62 +6,71 @@
     </head>
     <body>
         <%- include("./partials/nav.ejs") %>
-        <h2>Add A Fly</h2>
-        <form method="POST" action="/flies">
-            <label for="name">Fly Name:</label>
-            <input type="text" id="name" name="name" required>
-          
-            <label for="ingredients">Ingredients:</label>
-            <input type="text" id="ingredients" name="ingredients">
-          
-            <label for="hookSize">Hook Size:</label>
-            <select id="hookSize" name="hookSize" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="4">4</option>
-                <option value="6">6</option>
-                <option value="8">8</option>
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="14">14</option>
-                <option value="16">16</option>
-                <option value="18">18</option>
-                <option value="20">20</option>
-                <option value="22">22</option>
-            </select>
-          
-            <label for="type">Type:</label>
-            <select id="type" name="type" required>
-                <option value="nymph">nymph</option>
-                <option value="soft hackle">soft hackle</option>
-                <option value="streamer">streamer</option>
-                <option value="emerger">emerger</option>
-                <option value="dry">dry</option>
-            </select>
-         
-            <label for="imitating">Imitating:</label>
-            <input type="text" id="imitating" name="imitating">
-          
-            <label for="lifeStage">Life Stage:</label>
-            <select id="lifeStage" name="lifeStage">
-                <option value="nymph">nymph</option>
-                <option value="emerger">emerger</option>
-                <option value="dun">dun</option>
-                <option value="adult">adult</option>
-                <option value="spinner">spinner</option>
-                <option value="cripple">cripple</option>
-                <option value="N/A">N/A</option>
-            </select>
+        <h2 class="page-title">Add A Fly</h2>
+        <div class="form-holder">
+            <form method="POST" action="/flies">
 
-          
-            <label for="photo">Photo:</label>
-            <input type="text" id="photo" name="photo">
-          
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" step="1" required>
-          
-            <button type="submit">Add Fly</button>
-          </form>
-          
+                <label for="name"><b>Fly Name:</b></label>
+                <input type="text" id="name" name="name" placeholder="Fly Name..." required>
+                <br>
+
+                <label for="ingredients"><b>Ingredients:</b></label>
+                <input type="text" id="ingredients" name="ingredients" placeholder="Yearling elk hair, small gold wire...">
+                <br>
+            
+                <label for="hookSize"><b>Hook Size:</b></label>
+                <select id="hookSize" name="hookSize" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                    <option value="22">22</option>
+                </select>
+                <br>
+            
+                <label for="type"><b>Type:</b></label>
+                <select id="type" name="type" required>
+                    <option value="nymph">nymph</option>
+                    <option value="soft hackle">soft hackle</option>
+                    <option value="streamer">streamer</option>
+                    <option value="emerger">emerger</option>
+                    <option value="dry">dry</option>
+                </select>
+                <br>
+            
+                <label for="imitating"><b>Imitating:</b></label>
+                <input type="text" id="imitating" name="imitating" placeholder="Baitfish, cripple caddis, BWO...?">
+                <br>
+            
+                <label for="lifeStage"><b>Life Stage:</b></label>
+                <select id="lifeStage" name="lifeStage">
+                    <option value="nymph">nymph</option>
+                    <option value="emerger">emerger</option>
+                    <option value="dun">dun</option>
+                    <option value="adult">adult</option>
+                    <option value="spinner">spinner</option>
+                    <option value="cripple">cripple</option>
+                    <option value="N/A">N/A</option>
+                </select>
+                <br>
+            
+                <label for="photo"><b>Photo:</b></label>
+                <input type="text" id="photo" name="photo" placeholder="URL">
+                <br>
+            
+                <label for="quantity"><b>Quantity:</b></label>
+                <input type="number" id="quantity" name="quantity" min="1" step="1" required>
+                <br>
+            
+                <button type="submit">Add Fly</button>
+            </form>
+        </div>
     </body>
 </html>

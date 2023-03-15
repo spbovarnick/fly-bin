@@ -1,0 +1,47 @@
+
+.form-holder {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    input, select {
+        padding: 1rem .2rem;
+        width: 100%;
+        display: block;
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+    button {
+        width: 150px;
+        padding: 1rem;
+        border-radius: 50% 10%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    form {
+        width: 70%;
+    }
+    label {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    h2 {
+        padding-top: 10%;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    h2 {
+        padding-top: 15%;
+    }
+}

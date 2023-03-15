@@ -32,7 +32,11 @@ table {
 /* nav --------------------------
 -----------------------------------*/
 .topnav {
+  padding-top: 1rem;
   overflow: hidden;
+}
+.topnav .nav-brand {
+  padding-left: 3rem;
 }
 .topnav .break {
   display: none;
@@ -42,8 +46,7 @@ table {
   float: left;
 }
 .topnav a {
-  float: left;
-  display: block;
+  float: right;
   text-decoration: none;
   font-size: 1.2em;
   padding-right: 2.7vw;
