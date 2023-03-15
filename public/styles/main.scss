@@ -32,6 +32,13 @@ button {
     color: white;
     background-color: $orange;
     border-style: none;
+    transition: transform .5s ease;
+}
+
+button:hover {
+    background-color: $red;
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 table {
@@ -41,14 +48,25 @@ table {
 /* nav --------------------------
 -----------------------------------*/
 nav {
+    border: 2px solid orange;
     position: relative;
-    padding-top: 1rem;
+    padding: 1rem 0;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     .nav-brand {
-        // padding-left: 3rem;
-        position: absolute;
-        left: 4rem;
+        font-size: 2em;
+        // position: absolute;
+        padding-left: 4rem;
+        // top: 1rem;
+        transition: transform .5s ease;
     }
+
+    .nav-brand:hover {
+        transform: scale(1.1);
+    }
+
     .break {
         display: none;
     }
@@ -63,7 +81,15 @@ nav {
         padding-right: 2.7vw;
         color: black;
         padding: 0 1rem;
+        transition: transform .5s ease, background-color .5s ease, border-radius .5s ease;
     }
+
+    a:not(:first-child):hover {
+        background-color: $beige;
+        transform: scale(1.1);
+        border-radius: 5px;
+    }
+
     .icon {
         display: none;
     }
