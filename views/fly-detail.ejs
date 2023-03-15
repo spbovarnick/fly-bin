@@ -91,7 +91,7 @@
                         <% } else { %>
                         <% for (let note of notes) {%>
                         <div class="single-review">
-                            <p><b>Date fished:</b> <%= note.dateFished %></p>
+                            <p><b>Date fished:</b> <% const date = new Date(note.dateFished); %> <%= date.toDateString() %> </p>
                             <p><b>Air temp:</b> <%= note.airTemp %></p>
                             <p><b>Water temp:</b> <%= note.wtaerTemp %></p>
                             <p><b>Conditions:</b> <%= note.conditions %></p>
