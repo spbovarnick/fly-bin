@@ -78,6 +78,22 @@
                 padding-left: .7rem;
             }
 
+            .notes-box::-webkit-scrollbar {
+                width: .7em;
+            }
+
+            .notes-box::-webkit-scrollbar-track {
+                margin: 1em 0;
+                border-radius: 10px;
+                height: 90%;
+                -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+            }
+
+            .notes-box::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5); 
+            }
+
             .notes-box {
                 border: 1px solid gray;
                 padding: 10px;
@@ -124,30 +140,37 @@
     }
 }
 
+/* screen responsiveness
+-------------------------------------- */
+
+@media screen and (max-width: 1024px) {
+    .notes {
+        width: 100vw;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .detail-div {
         width: 95%;
         flex-direction: column;
 
         img {
-            width: 70%;
+            width: 60%;
         }
- 
-        .d-card-info {
-            width: 95%;
-            #ingredients-div {
-                width: 50%;
-            }
-            table  {
-                width: 50%;
-            }
-            .actions {
-                width: 100%;
-                flex-direction: row;
-            }
+    }
+
+    .d-card-info {
+        width: 95% !important;
+        #ingredients-div {
+            width: 50%;
         }
-
-
+        table  {
+            width: 50%;
+        }
+        .actions {
+            width: 100%;
+            flex-direction: row;
+        }
     }
     
 }

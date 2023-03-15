@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .detail-div {
   display: flex;
   align-items: center;
@@ -67,6 +66,19 @@
   margin-top: 1rem;
   padding-left: 0.7rem;
 }
+.detail-div .d-card-info .notes .notes-box::-webkit-scrollbar {
+  width: 0.7em;
+}
+.detail-div .d-card-info .notes .notes-box::-webkit-scrollbar-track {
+  margin: 1em 0;
+  border-radius: 10px;
+  height: 90%;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.detail-div .d-card-info .notes .notes-box::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
 .detail-div .d-card-info .notes .notes-box {
   border: 1px solid gray;
   padding: 10px;
@@ -100,24 +112,31 @@
   font-size: 0.8rem;
 }
 
+/* screen responsiveness
+-------------------------------------- */
+@media screen and (max-width: 1024px) {
+  .notes {
+    width: 100vw;
+  }
+}
 @media screen and (max-width: 768px) {
   .detail-div {
     width: 95%;
     flex-direction: column;
   }
   .detail-div img {
-    width: 70%;
+    width: 60%;
   }
-  .detail-div   .d-card-info {
-    width: 95%;
+  .d-card-info {
+    width: 95% !important;
   }
-  .detail-div   .d-card-info #ingredients-div {
+  .d-card-info #ingredients-div {
     width: 50%;
   }
-  .detail-div   .d-card-info table {
+  .d-card-info table {
     width: 50%;
   }
-  .detail-div   .d-card-info .actions {
+  .d-card-info .actions {
     width: 100%;
     flex-direction: row;
   }
