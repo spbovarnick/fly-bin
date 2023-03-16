@@ -70,20 +70,21 @@ app.get('/about', (req, res) => {
 
 /* SEARCH ROUTE
 ------------------------------------------------------*/
-app.get("/search/:query", (req, res) => {
-    // console.log(req.params.query)
+app.get("/search", (req, res) => {
+    console.log(req.query.query)
     db.Fly.find({
-         name: req.params.query 
-        // "$or" : [
-        //     { name: {$regex:req.params.query} },
-        //     { ingredients: {$regex:req.params.query} },
-        //     { hookSize: {$regex:req.params.query} },
-        //     { type: {$regex:req.params.query} },
-        //     { imitating: {$regex:req.params.query} },
-        //     { lifeStage: {$regex:req.params.query} }
-        // ]
+
+        $or: [
+            { name: {$regex: req.query.query, $options: 'ix'} },
+            { ingredients: {$regex: req.query.query, $options: 'ix'} },        
+            { type: {$regex: req.query.query, $options: 'ix'} },
+            { imitating: {$regex: req.query.query, $options: 'ix'} }
+        ]
+        // $text: { 
+        //     $search: req.query.query
+        // }
     })
-    .then(results => res.send(results))
+    .then(results => res.json(results))
     // res.send('search')
 })
 

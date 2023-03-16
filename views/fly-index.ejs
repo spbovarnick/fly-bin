@@ -6,15 +6,39 @@
     </head>
     <body>
         <%- include("./partials/nav.ejs")%>
-        <h2 class="page-title">Your Fly Bin</h2>
+        <h2 class="page-title">Search Results</h2>
         <section class="flies-list">
             <% for (let fly of flies) { %>
-            <div class="fly-card">
-                <h3><%= fly.name %></h3>
-                <img src="<%=fly.photo%>">
+            <figure class="fly-card">
+                <% if (fly.photo.length > 0) { %>
+                <img src="<%= fly.photo %>">
+                <% } else { %>
+                <img src="/assets/no-photo.jpeg">
+                <% } %>
+                
+                <figcaption>
+                    <h3><%= fly.name %></h3>
+                    <div class="nums">
+                        <div id="num-actions">
+                            <a><b>Quantity:</b> <%= fly.quantity %></a>
+                            <div id="qty-btns">
+                                <form method="POST" id="dec" action="/flies/<%= fly._id %>/decrement-qty?_method=PUT">
+                                    <button class="btn" type="submit" value="Remove Flies"> - </button>
+                                </form>
+                                <form method="POST" id="inc" action="/flies/<%= fly._id %>/increment-qty?_method=PUT">
+                                    <button class="btn" type="submit" value="Add Flies"> + </button>
+                                </form>                                
+                            </div>
+                        </div>
+                        <a><b>Size:</b> <%= fly.hookSize %></a>
+                    </div>
+                    
 
-                <a class="learn-more btn" href="/flies/<%= fly._id %>">Learn More</a>       
-            </div>
+                    <button id="details" class="btn">
+                        <a class="details" href="/flies/<%= fly._id %>">see details</a>       
+                    </button>
+                </figcaption>
+            </figure>
             <% } %>
         </section>
         <%- include('./partials/footer.ejs') %>
