@@ -51,6 +51,7 @@ app.use(connectLiveReload());
 
 
 // mount routes ---------------------------------------------------
+
 // home/landing page
 app.get('/', function (req, res) {
     // res.send('made it home')
@@ -65,6 +66,27 @@ app.get('/', function (req, res) {
 app.get('/about', (req, res) => {
     res.render('about')
 })
+
+
+/* SEARCH ROUTE
+------------------------------------------------------*/
+app.get("/search/:query", (req, res) => {
+    // console.log(req.params.query)
+    db.Fly.find({
+         name: req.params.query 
+        // "$or" : [
+        //     { name: {$regex:req.params.query} },
+        //     { ingredients: {$regex:req.params.query} },
+        //     { hookSize: {$regex:req.params.query} },
+        //     { type: {$regex:req.params.query} },
+        //     { imitating: {$regex:req.params.query} },
+        //     { lifeStage: {$regex:req.params.query} }
+        // ]
+    })
+    .then(results => res.send(results))
+    // res.send('search')
+})
+
 
 app.get('/seed', function(req, res) {
     // remove existing seed data
