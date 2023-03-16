@@ -17,13 +17,15 @@ a:-webkit-any-link {
   text-decoration: none;
 }
 
-button {
+button, .btn {
   font-family: "Hind", sans-serif !important;
   font-size: 1rem;
   color: white;
   background-color: #A0522D;
   border-style: none;
   transition: transform 0.5s ease;
+  padding: 1rem;
+  border-radius: 50% 10%;
 }
 
 button:hover {
@@ -48,6 +50,9 @@ nav .nav-brand {
   font-size: 2em;
   padding-left: 4rem;
   transition: transform 0.5s ease;
+}
+nav .btn {
+  padding: 0.5rem;
 }
 nav .nav-brand:hover {
   transform: scale(1.1);
