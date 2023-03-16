@@ -69,6 +69,8 @@ app.get('/about', (req, res) => {
 
 
 /* SEARCH ROUTE
+adapted from DevSprout https://www.youtube.com/watch?v=9_lKMTXVk64,
+and Code Step By Step https://www.youtube.com/watch?v=bIWZ8EnLk54
 ------------------------------------------------------*/
 app.get("/search", (req, res) => {
     console.log(req.query.query)
