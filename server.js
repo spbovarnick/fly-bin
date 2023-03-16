@@ -80,12 +80,10 @@ app.get("/search", (req, res) => {
             { type: {$regex: req.query.query, $options: 'ix'} },
             { imitating: {$regex: req.query.query, $options: 'ix'} }
         ]
-        // $text: { 
-        //     $search: req.query.query
-        // }
     })
-    .then(results => res.json(results))
-    // res.send('search')
+        .then(flies => res.render(`fly-index`, {
+            flies: flies
+        }))
 })
 
 
