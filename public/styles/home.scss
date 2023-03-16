@@ -1,3 +1,12 @@
+/* variables
+------------------------------------*/
+$brown: #5C3A21;
+$green: #556B2F;
+$red: #8B3626;
+$beige: #C9A376;
+$orange: #A0522D;
+$egg: #f0ead6;
+
 .page-title {
     margin: 40px auto 30px auto !important;
     text-align: center;
@@ -19,10 +28,11 @@
         text-align: center;
         margin: 20px auto;
         padding: 20px;
-        border: 1px solid gray;
+        border: 1px solid $orange;
         border-radius: 30px;
         width: 300px;
-        height: 400px;
+        height: 420px;
+        overflow: hidden;
         img {
             height: 150px;
             top: 30px;
@@ -45,33 +55,27 @@
                 display: flex;
                 justify-content: space-evenly ;
                 width: 100%;
-                position: absolute;
+                position: relative;
                 top: 250px;
-            }
-            button {
-                position: absolute;
-                padding: 1rem;
-                border-radius: 50% 10%;
-            }
-            #qty-actions {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                form {
-                    width: 100%;
-                    position: absolute;
+                
+                #qty-btns {
+                    display: flex;
+                    justify-content: space-around;
+                    button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 2rem;
+                        width: 2rem;
+                        border-radius: 50%;
+                    }
                 }
-
-                // #inc {
-                //     bottom: 30px;
-    
-                // }
-                // #dec {
-                //     bottom: 30px;
-                // }
             }
             #details {
                 bottom: 0px;
+                position: absolute;
+                padding: 1rem;
+                border-radius: 50% 10%;
             }
 
         }

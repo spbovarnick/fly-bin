@@ -39,6 +39,7 @@ table {
 /* nav --------------------------
 -----------------------------------*/
 nav {
+  background: #f0ead6;
   position: relative;
   padding: 1rem 0;
   overflow: hidden;

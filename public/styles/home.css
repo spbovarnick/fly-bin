@@ -1,3 +1,5 @@
+/* variables
+------------------------------------*/
 .page-title {
   margin: 40px auto 30px auto !important;
   text-align: center;
@@ -19,10 +21,11 @@
   text-align: center;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid gray;
+  border: 1px solid #A0522D;
   border-radius: 30px;
   width: 300px;
-  height: 400px;
+  height: 420px;
+  overflow: hidden;
 }
 .flies-list .fly-card img {
   height: 150px;
@@ -45,23 +48,24 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 250px;
 }
-.flies-list .fly-card figcaption button {
-  position: absolute;
-  padding: 1rem;
-  border-radius: 50% 10%;
-}
-.flies-list .fly-card figcaption #qty-actions {
-  width: 100%;
+.flies-list .fly-card figcaption .nums #qty-btns {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
-.flies-list .fly-card figcaption #qty-actions form {
-  width: 100%;
-  position: absolute;
+.flies-list .fly-card figcaption .nums #qty-btns button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
 }
 .flies-list .fly-card figcaption #details {
   bottom: 0px;
+  position: absolute;
+  padding: 1rem;
+  border-radius: 50% 10%;
 }/*# sourceMappingURL=home.css.map */

@@ -1,10 +1,19 @@
+/* variables
+------------------------------------*/
+$brown: #5C3A21;
+$green: #556B2F;
+$red: #8B3626;
+$beige: #C9A376;
+$orange: #A0522D;
+$egg: #f0ead6;
+
 .detail-div {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin: 20px auto;
     padding: 20px 20px 0 20px;
-    border: 1px solid gray;
+    border: 1px solid $orange;
     border-radius: 30px;
     width: 80%;
     
@@ -27,7 +36,7 @@
             }
             
             p:last-child {
-                border: 1px solid lightgray;
+                border: 1px solid $beige;
                 border-radius: 1rem;
                 padding: .7rem;
                 width: 100%;
@@ -70,7 +79,7 @@
         }
         .line {
             width: 100%;
-            border: .5px solid gray;
+            border: .5px solid $beige;
             margin: 1rem 0;
         }
         .notes {
@@ -98,7 +107,7 @@
             }
 
             .notes-box {
-                border: 1px solid gray;
+                border: 1px solid $beige;
                 padding: 10px;
                 border-radius: 20px;
                 width: 100%;

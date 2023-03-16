@@ -1,3 +1,12 @@
+/* variables
+------------------------------------*/
+$brown: #5C3A21;
+$green: #556B2F;
+$red: #8B3626;
+$beige: #C9A376;
+$orange: #A0522D;
+$egg: #f0ead6;
+
 
 .form-holder {
     display: flex;
@@ -11,11 +20,14 @@ form {
     justify-content: center;
     align-items: center;
     width: 90%;
+    label {
+        padding-left: .2rem;
+    }
     input, select, textarea {
         padding: 1rem .2rem;
         width: 100%;
         display: block;
-        border: 1px solid gray;
+        border: 1px solid $orange;
         border-radius: 10px;
     }
     button {

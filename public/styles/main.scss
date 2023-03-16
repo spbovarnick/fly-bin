@@ -22,6 +22,7 @@ $egg: #f0ead6;
     box-sizing: border-box;
 }
 
+
 a:-webkit-any-link {
     text-decoration: none;
 }
@@ -48,6 +49,7 @@ table {
 /* nav --------------------------
 -----------------------------------*/
 nav {
+    background: $egg;
     position: relative;
     padding: 1rem 0;
     overflow: hidden;
