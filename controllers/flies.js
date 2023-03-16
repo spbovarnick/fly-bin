@@ -25,9 +25,7 @@ router.put('/:flyId/increment-qty', (req, res) => {
         req.body = { $inc: { quantity: +1 }},
         { new: true }
         )        
-            .then(fly => {
-                res.redirect(`/flies/${fly.id}`)          
-            })
+            .then(res.redirect(`back`))
 })
 
 // decrement quantity route
@@ -37,9 +35,7 @@ router.put('/:flyId/decrement-qty', (req, res) => {
         req.body = { $inc: { quantity: -1 }},
         { new: true }
     )   
-        .then(fly => {
-            res.redirect(`/flies/${fly.id}`)          
-        })
+        .then(res.redirect(`back`))
         
 })
 
