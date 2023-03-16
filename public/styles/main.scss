@@ -48,18 +48,12 @@ table {
 /* nav --------------------------
 -----------------------------------*/
 nav {
-    border: 2px solid orange;
     position: relative;
     padding: 1rem 0;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     .nav-brand {
         font-size: 2em;
-        // position: absolute;
         padding-left: 4rem;
-        // top: 1rem;
         transition: transform .5s ease;
     }
 
@@ -78,9 +72,8 @@ nav {
         float: right;
         text-decoration: none;
         font-size: 1.2em;
-        padding-right: 2.7vw;
         color: black;
-        padding: 0 1rem;
+        padding: .5rem 1rem;
         transition: transform .5s ease, background-color .5s ease, border-radius .5s ease;
     }
 

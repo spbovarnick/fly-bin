@@ -39,13 +39,9 @@ table {
 /* nav --------------------------
 -----------------------------------*/
 nav {
-  border: 2px solid orange;
   position: relative;
   padding: 1rem 0;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 nav .nav-brand {
   font-size: 2em;
@@ -66,9 +62,8 @@ nav a:not(:first-child) {
   float: right;
   text-decoration: none;
   font-size: 1.2em;
-  padding-right: 2.7vw;
   color: black;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
   transition: transform 0.5s ease, background-color 0.5s ease, border-radius 0.5s ease;
 }
 nav a:not(:first-child):hover {
