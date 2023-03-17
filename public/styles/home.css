@@ -66,4 +66,11 @@
 .flies-list .fly-card figcaption #details {
   bottom: 0px;
   position: absolute;
+}
+
+#no-results {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: large;
 }/*# sourceMappingURL=home.css.map */

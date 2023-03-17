@@ -72,20 +72,23 @@ app.get('/about', (req, res) => {
 adapted from DevSprout https://www.youtube.com/watch?v=9_lKMTXVk64,
 and Code Step By Step https://www.youtube.com/watch?v=bIWZ8EnLk54
 ------------------------------------------------------*/
-app.get("/search", (req, res) => {
-    console.log(req.query.query)
-    db.Fly.find({
 
-        $or: [
-            { name: {$regex: req.query.query, $options: 'ix'} },
-            { ingredients: {$regex: req.query.query, $options: 'ix'} },        
-            { type: {$regex: req.query.query, $options: 'ix'} },
-            { imitating: {$regex: req.query.query, $options: 'ix'} }
-        ]
-    })
-        .then(flies => res.render(`fly-index`, {
-            flies: flies
-        }))
+app.get("/search", async (req, res) => {
+    // console.log(Number(req.query.query))
+        db.Fly.find({
+            $or: [
+                // { hookSize: {$regex: req.query.query, $options: 'ix'} },
+                { name: {$regex: req.query.query, $options: 'ix'} },
+                { ingredients: {$regex: req.query.query, $options: 'ix'} },        
+                { type: {$regex: req.query.query, $options: 'ix'} },
+                { imitating: {$regex: req.query.query, $options: 'ix'} },
+            ]
+        } )
+            .then(flies => 
+                res.render(`fly-index`, {
+                flies: flies
+            }
+        ))    
 })
 
 

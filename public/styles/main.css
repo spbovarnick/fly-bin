@@ -52,8 +52,7 @@ nav .nav-brand {
   transition: transform 0.5s ease;
 }
 nav form {
-  position: absolute;
-  left: 35%;
+  float: right;
 }
 nav form button {
   border-radius: 100%;

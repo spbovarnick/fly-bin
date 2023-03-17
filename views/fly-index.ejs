@@ -6,8 +6,15 @@
     </head>
     <body>
         <%- include("./partials/nav.ejs")%>
-        <h2 class="page-title">Search Results</h2>
+        <h1 class="page-title">Search Results</h1>
         <section class="flies-list">
+            
+            <% console.log(flies) %>
+            <% if (flies.length === 0 ) { %>
+            
+                <p id="no-results">Oh no! Looks like no flies matched your search results. For now, our search doesn't accept numbers. Sorry!</p>
+
+            <% } %>
             <% for (let fly of flies) { %>
             <figure class="fly-card">
                 <% if (fly.photo.length > 0) { %>
