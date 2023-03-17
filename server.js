@@ -75,9 +75,17 @@ and Code Step By Step https://www.youtube.com/watch?v=bIWZ8EnLk54
 
 app.get("/search", async (req, res) => {
     // console.log(Number(req.query.query))
+
         db.Fly.find({
+            
+
             $or: [
-                // { hookSize: {$regex: req.query.query, $options: 'ix'} },
+                { "$expr": {
+                    "$regexMatch": {
+                        "input": {"$toString": "$hookSize"},
+                        "regex": req.query.query
+                    }
+                } },
                 { name: {$regex: req.query.query, $options: 'ix'} },
                 { ingredients: {$regex: req.query.query, $options: 'ix'} },        
                 { type: {$regex: req.query.query, $options: 'ix'} },

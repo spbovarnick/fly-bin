@@ -13,6 +13,10 @@
   box-sizing: border-box;
 }
 
+body {
+  padding-top: 5rem;
+}
+
 a:-webkit-any-link {
   text-decoration: none;
 }
@@ -42,9 +46,13 @@ table {
 -----------------------------------*/
 nav {
   background: #f0ead6;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100vw;
   padding: 1rem 0;
   overflow: hidden;
+  z-index: 1;
+  /* Collapse navbar on scroll down */
 }
 nav .nav-brand {
   font-size: 2em;
@@ -52,7 +60,11 @@ nav .nav-brand {
   transition: transform 0.5s ease;
 }
 nav form {
-  float: right;
+  display: flex;
+  align-items: center;
+}
+nav form input {
+  margin-right: 0.5rem;
 }
 nav form button {
   border-radius: 100%;
@@ -75,7 +87,7 @@ nav h1 {
   display: inline;
   float: left;
 }
-nav a:not(:first-child) {
+nav form, nav a:not(:first-child) {
   float: right;
   text-decoration: none;
   font-size: 1.2em;
@@ -92,13 +104,42 @@ nav .icon {
   display: none;
 }
 
+.collapse {
+  animation: collapse 0.5s ease forwards;
+}
+
+@keyframes collapse {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+/* Open navbar on scroll up */
+.open {
+  animation: open 0.5s ease forwards;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .page-title {
   margin: 40px auto 30px auto !important;
   text-align: center;
 }
 
-@media screen and (max-width: 600px) {
-  nav a:not(:first-child) {
+@media screen and (max-width: 650px) {
+  nav form, nav a:not(:first-child) {
     display: none;
   }
   nav a.icon {
@@ -107,7 +148,7 @@ nav .icon {
     padding-left: 1rem;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .topnav.responsive .break {
     display: block;
   }
@@ -116,7 +157,7 @@ nav .icon {
     right: 0;
     top: 0;
   }
-  .topnav.responsive a {
+  .topnav.responsive form, .topnav.responsive a {
     float: none;
     display: block;
     text-align: center;

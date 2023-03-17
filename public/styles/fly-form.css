@@ -6,24 +6,24 @@
   padding-bottom: 1rem;
 }
 
-form {
+form.not-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 90%;
 }
-form label {
+form.not-nav label {
   padding-left: 0.2rem;
 }
-form input, form select, form textarea {
+form.not-nav input, form.not-nav select, form.not-nav textarea {
   padding: 1rem 0.2rem;
   width: 100%;
   display: block;
   border: 1px solid #A0522D;
   border-radius: 10px;
 }
-form button {
+form.not-nav button {
   width: 150px;
   padding: 1rem;
   border-radius: 50% 10%;
