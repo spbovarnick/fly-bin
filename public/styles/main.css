@@ -28,7 +28,7 @@ button, .btn {
   border-radius: 50% 10%;
 }
 
-button:hover {
+.btn:hover, button:hover {
   background-color: #8B3626;
   transform: scale(1.1);
   cursor: pointer;
