@@ -19,5 +19,5 @@ The biggest hurdle I experienced was implementing a fully functional search bar 
 
 If time and resources were less finite, there is lots more that I'd love to implement with this app:
     - Drag-and-drop image upload on the add flies form, or at least image file upload via [multer](https://www.npmjs.com/package/multer).
-    - A location field within notes taht uses the Google Maps Platform to allow users to geo-tag notes
+    - A location field within notes that uses the Google Maps Platform to allow users to geo-tag notes
     - OAuth

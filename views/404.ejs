@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include("./partials/head.ejs", { title: "404" })%>
+        <style>
+            section {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                font-size: 1.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <%- include("./partials/nav.ejs")%>
+        <h1 class="page-title">404</h1>
+        <section>
+            <img width="300px" src="/assets/404-fish.png">
+            <p>Sorry, we can't find what you're looking for!</p>
+        </section>
+    </body>
+</html>

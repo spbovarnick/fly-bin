@@ -136,6 +136,7 @@ nav .icon {
 .page-title {
   margin: 40px auto 30px auto !important;
   text-align: center;
+  font-size: 3rem;
 }
 
 @media screen and (max-width: 650px) {

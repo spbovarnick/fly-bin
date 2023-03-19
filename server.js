@@ -120,7 +120,7 @@ app.use('/flies', fliesCtrl);
 app.use('/notes', notesCtrl);
 
 app.get('*', function(req, res) {
-    res.send(`404: can't find what you're looking 4`)
+    res.render(`404`)
 })
 
 app.listen(process.env.PORT, function() {
