@@ -5,6 +5,7 @@ const express = require('express');
 const livereload = require('livereload');
 const connectLiveReload = require('connect-livereload');
 const methodOverride = require('method-override');
+const multer = require("multer");
 
 
 // require the routes in the controllers folder ----------------------------------
@@ -39,6 +40,16 @@ liveReloadServer.server.once("connection", () => {
 // config the app (app.set) ---------------------------------------------------
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+// multer setup
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(
+            null,
+            file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+        );
+    },
+});
+const upload = multer({ storage: storage })
 
 
 
