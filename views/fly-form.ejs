@@ -8,7 +8,7 @@
         <%- include("./partials/nav.ejs") %>
         <h2 class="page-title">Add A Fly</h2>
         <div class="form-holder">
-            <form class="not-nav" method="POST" action="/flies">
+            <form class="not-nav" method="POST" action="/newFly" enctype="multipart/form-data">
 
                 <label for="name"><b>Fly Name:</b></label>
                 <input type="text" id="name" name="name" placeholder="Fly Name..." required>
@@ -62,7 +62,7 @@
                 <br>
             
                 <label for="photo"><b>Photo:</b></label>
-                <input type="text" id="photo" name="photo" placeholder="URL">
+                <input type="file" id="photo" name="photo" placeholder="URL">
                 <br>
             
                 <label for="quantity"><b>Quantity:</b></label>

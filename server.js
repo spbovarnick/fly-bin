@@ -5,7 +5,7 @@ const express = require('express');
 const livereload = require('livereload');
 const connectLiveReload = require('connect-livereload');
 const methodOverride = require('method-override');
-const multer = require("multer");
+const multer = require("multer")
 
 
 // require the routes in the controllers folder ----------------------------------
@@ -43,12 +43,13 @@ app.set('views', path.join(__dirname, 'views'));
 // multer setup
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(
-            null,
-            file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-        );
+        cb( null, './public/uploads');
     },
-});
+    filename: function (req,file, cb) {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9 )
+        cb(null, file.fieldname + '-' + uniqueSuffix)
+    }
+ });
 const upload = multer({ storage: storage })
 
 
@@ -76,6 +77,19 @@ app.get('/', function (req, res) {
 
 app.get('/about', (req, res) => {
     res.render('about')
+})
+
+// add fly, create POST
+app.post('/newFly', upload.single("photo"), (req, res) => {
+    db.Fly.create(req.body, { photo: req.file.path})
+        .then(fly => {
+            const flatList = []
+            for (let note of fly.notes) {
+                flatList.push(note)
+            }
+            res.redirect(`/flies/${fly.id}`)
+        })
+    // console.log(req.file.path, req.body)
 })
 
 
