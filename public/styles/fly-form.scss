@@ -14,7 +14,7 @@ $egg: #f0ead6;
     padding-bottom: 1rem;
 }
 
-form.not-nav {
+.not-nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +50,7 @@ form.not-nav {
 }
 
 @media screen and (min-width: 768px) {
-    form {
+    .not-nav {
         width: 70%;
     }
     label {
