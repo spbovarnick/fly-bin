@@ -3,7 +3,13 @@ const mongoose = require('mongoose');
 
 // Create a schema to define the properties of the users collection
 const userSchema = new mongoose.Schema({
-  name: String
+  name: String,
+  googleId: {
+    type: String,
+    required: true
+  },
+  email: String,
+  avatar: String
 }, {
   timestamps: true
 });

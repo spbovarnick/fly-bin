@@ -45,7 +45,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 
-
+// MIDDLEWARE---------------------------------------------------
 // middleware (app.use)
 // directs to static assets/files
 app.use(express.static('public'));
@@ -60,6 +60,11 @@ app.use(session({
 // passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+// user variable
+app.use(function (req, res, next) {
+    res.locals.user = req.user;
+    next();
+});
 
 // mount routes ---------------------------------------------------
 
@@ -124,7 +129,34 @@ app.get('/seed', function(req, res) {
             
             // seed fly collection with data
         })
-})
+});
+
+// Google OAuth login route
+app.get('/auth/google', passport.authenticate(
+    // passport strategy being used
+    'google',
+    {
+      // Request user profile and email
+      scope: ['profile', 'email'],
+    }
+  ));
+  
+// google OAuth cb route
+app.get('/oauth2callback', passport.authenticate(
+    'google',
+    {
+        successRedirect: '/',
+        failureRedirect: '/'
+    }
+));
+
+// OAuth logout route
+app.get('/logout', function(req, res){
+    req.logout(function() {
+        res.redirect('/');
+    });
+});
+
 
 // tell app to look to 'controllers' to handle routes that begin /flies or /notes
 app.use('/flies', fliesCtrl);
