@@ -115,11 +115,19 @@ nav {
     .icon {
         display: none;
     }
-
-
-/* Collapse navbar on scroll down */
+    .login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 34px;
+      }
+      
+      .login img {
+        height: 30px;
+      }      
 }
 
+/* Collapse navbar on scroll down */
 .collapse {
     animation: collapse .5s ease forwards;
 }

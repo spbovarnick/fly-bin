@@ -52,7 +52,6 @@ nav {
   padding: 1rem 0;
   overflow: hidden;
   z-index: 1;
-  /* Collapse navbar on scroll down */
 }
 nav .nav-brand {
   font-size: 2em;
@@ -103,7 +102,17 @@ nav a:not(:first-child):hover {
 nav .icon {
   display: none;
 }
+nav .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+nav .login img {
+  height: 30px;
+}
 
+/* Collapse navbar on scroll down */
 .collapse {
   animation: collapse 0.5s ease forwards;
 }
