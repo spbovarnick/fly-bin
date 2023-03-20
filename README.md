@@ -22,3 +22,5 @@ If time and resources were less finite, there is lots more that I'd love to impl
     - Drag-and-drop image upload on the add flies form, or at least image file upload via [multer](https://www.npmjs.com/package/multer).
     - A location field within notes that uses the Google Maps Platform to allow users to geo-tag notes
     - OAuth
+
+Note: This repo does include branches built with OAuth and multer. The OAuth branch has functioning OAuth routes. On the multer, branch, I wasn't quite able to get file upload working within my create route.
