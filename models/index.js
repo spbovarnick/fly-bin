@@ -10,6 +10,7 @@ const mongodbUri = process.env.MONGODBURI;
 })().catch(err => console.log('Connection error' + err))
 
 module.exports = {
+    User: require("./user"),
     Fly: require('./fly'),
     seedFlies: require('./seed')
 }

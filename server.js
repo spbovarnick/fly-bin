@@ -5,6 +5,8 @@ const express = require('express');
 const livereload = require('livereload');
 const connectLiveReload = require('connect-livereload');
 const methodOverride = require('method-override');
+const session = require('express-session');
+const passport = require('passport');
 
 
 // require the routes in the controllers folder ----------------------------------
@@ -13,6 +15,7 @@ const notesCtrl = require('./controllers/notes');
 
 // require the db connex, models, seed data ----------------------------------
 const db = require('./models');
+require('./config/passport')
 
 // create express app ---------------------------------------------------
 const app = express();
@@ -48,7 +51,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 // use the connect livereload pkg to connect nodemon && livereload
 app.use(connectLiveReload());
-
+// session
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true
+}))
+// passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 // mount routes ---------------------------------------------------
 
