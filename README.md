@@ -1,5 +1,5 @@
 # FlyBin
-![FlyBin Home](/public/assets/fly-bin.jpeg)
+![FlyBin Home](/public/assets/home-shot)
 
 ## Technologies Used
 This MEN-stack web app is built with MongoDB, Node.js, express.js, Embedded JavaScript, vanilla JavaScript, and SCSS. 
